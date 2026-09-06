@@ -280,22 +280,19 @@ export default function Home() {
              viewport={{ once: true }}
              className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight">Our Clinic & Team</h2>
-            <p className="text-gray-600 dark:text-gray-300 text-xl font-medium">Take a look inside our state-of-the-art facility and meet our dedicated staff.</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight">Our Clinic</h2>
+            <p className="text-gray-600 dark:text-gray-300 text-xl font-medium">Take a look inside our state-of-the-art facility.</p>
           </motion.div>
-
           <motion.div 
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
             {[
-              { src: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80", alt: "Modern Clinic Interior", className: "col-span-1 md:col-span-2 lg:col-span-2 aspect-[16/9]" },
-              { src: "/dr.Kishandudhat.png", alt: "Dr. Kishan Dudhat", className: "col-span-1 md:col-span-1 lg:col-span-1 aspect-[4/3] lg:aspect-auto" },
-              { src: "/dr.nikunjbhuva.png", alt: "Dr. Nikunj Bhuva", className: "col-span-1 md:col-span-1 lg:col-span-1 aspect-[4/3] lg:aspect-auto" },
-              { src: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80", alt: "State-of-the-Art Dental Facility", className: "col-span-1 md:col-span-2 lg:col-span-2 aspect-[16/9] lg:aspect-auto" },
+              { src: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80", alt: "Modern Clinic Interior", className: "col-span-1 md:col-span-1 aspect-[16/9]" },
+              { src: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80", alt: "State-of-the-Art Dental Facility", className: "col-span-1 md:col-span-1 aspect-[16/9]" },
             ].map((img, idx) => (
               <motion.div 
                 variants={itemVariants}
