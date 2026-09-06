@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%" fx="35%" fy="35%">
+      <stop offset="0%" stop-color="#4a3805" />
+      <stop offset="50%" stop-color="#1f1602" />
+      <stop offset="100%" stop-color="#0a0801" />
+    </radialGradient>
+    
+    <!-- Gold Line Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="25%" stop-color="#facc15" />
+      <stop offset="65%" stop-color="#eab308" />
+      <stop offset="100%" stop-color="#a16207" />
+    </linearGradient>
+
+    <!-- Outer Ring Glow -->
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#facc15" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#713f12" stop-opacity="0.2" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Circular Background -->
+  <circle cx="250" cy="250" r="240" fill="url(#bgGrad)" stroke="url(#ringGrad)" stroke-width="4" />
+
+  <!-- Face Profile Line Art (Left Side) -->
+  <path d="M 142 88 
+           C 136 122, 128 152, 102 182 
+           C 92 195, 78 228, 78 240 
+           C 78 250, 92 254, 98 260 
+           C 104 266, 98 280, 93 288 
+           C 90 294, 104 300, 108 306 
+           C 110 308, 98 322, 103 332 
+           C 108 342, 118 358, 128 368
+           C 138 378, 148 382, 158 388" 
+        fill="none" stroke="url(#goldGrad)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Face Contour Inner Line -->
+  <path d="M 142 88 C 140 122, 146 152, 160 182 C 174 212, 182 242, 178 272 C 174 302, 164 332, 148 358" 
+        fill="none" stroke="url(#goldGrad)" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Tooth Outline (Right Side) -->
+  <path d="M 158 152 
+           C 168 112, 198 96, 248 100 
+           C 288 104, 338 90, 378 110 
+           C 398 120, 408 160, 392 200 
+           C 382 230, 376 270, 362 320 
+           C 352 350, 342 380, 332 400 
+           C 328 410, 318 405, 312 390 
+           C 302 360, 298 300, 298 270 
+           C 298 290, 288 350, 278 390 
+           C 272 410, 262 410, 258 390
+           C 248 350, 242 280, 238 250" 
+        fill="none" stroke="url(#goldGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Tooth Crown Inner Curve -->
+  <path d="M 228 130 C 268 120, 318 120, 358 150 C 372 162, 378 185, 372 200" 
+        fill="none" stroke="url(#goldGrad)" stroke-width="5" stroke-linecap="round" />
+
+  <!-- Dental Implant Screw Threads (Center) -->
+  <g fill="none" stroke="url(#goldGrad)" stroke-linecap="round">
+    <path d="M 218 280 L 268 280" stroke-width="7" />
+    <path d="M 212 300 L 262 300" stroke-width="5" />
+    <path d="M 215 318 L 259 318" stroke-width="5" />
+    <path d="M 219 336 L 255 336" stroke-width="5" />
+    <path d="M 222 354 L 252 354" stroke-width="5" />
+    <path d="M 225 372 L 249 372" stroke-width="5" />
+    <path d="M 229 390 L 245 390" stroke-width="6" />
+    <path d="M 227 270 L 227 400" stroke-width="3" />
+    <path d="M 253 270 L 253 400" stroke-width="3" />
+  </g>
+
+  <!-- Golden Swoosh Arc Across Logo -->
+  <path d="M 108 390 
+           C 148 360, 218 300, 298 250 
+           C 358 215, 408 205, 438 205
+           C 398 215, 328 240, 258 285
+           C 188 330, 128 380, 108 390 Z" 
+        fill="url(#goldGrad)" />
+</svg>
