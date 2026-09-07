@@ -5,9 +5,9 @@ import { clinicData } from "../data/mockData";
 export default function About() {
   const stats = [
     { label: "Happy Patients", value: "10k+", icon: Users, color: "text-blue-500", bg: "bg-blue-50" },
-    { label: "Years Experience", value: "15+", icon: Clock, color: "text-teal-500", bg: "bg-teal-50" },
-    { label: "Awards Won", value: "25", icon: Award, color: "text-purple-500", bg: "bg-purple-50" },
-    { label: "Successful Surgeries", value: "5k+", icon: HeartPulse, color: "text-rose-500", bg: "bg-rose-50" },
+    { label: "Years Experience", value: "15+", icon: Clock, color: "text-blue-500", bg: "bg-blue-50" },
+    { label: "Awards Won", value: "25", icon: Award, color: "text-blue-500", bg: "bg-blue-50" },
+    { label: "Successful Surgeries", value: "5k+", icon: HeartPulse, color: "text-blue-500", bg: "bg-blue-50" },
   ];
 
   return (
@@ -91,7 +91,7 @@ export default function About() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="bg-white dark:bg-gray-900  border border-white/10 rounded-2xl p-8 text-center"
+                className="bg-white dark:bg-gray-900 border border-white/10 rounded-2xl p-8 text-center"
               >
                 <div className={`w-16 h-16 mx-auto ${stat.bg} ${stat.color} rounded-2xl flex items-center justify-center mb-6`}>
                   <stat.icon className="w-8 h-8" />
