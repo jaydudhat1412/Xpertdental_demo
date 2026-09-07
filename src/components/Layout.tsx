@@ -6,6 +6,7 @@ import { clinicData } from "../data/mockData";
 import { cn } from "../lib/utils";
 import BackToTop from "./BackToTop";
 import WhatsAppButton from "./WhatsAppButton";
+import CallToAction from "./CallToAction";
 
 export default function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -171,6 +172,7 @@ export default function Layout() {
       <main className="flex-grow">
         <Outlet />
       </main>
+      <CallToAction />
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white pt-16 pb-8">
