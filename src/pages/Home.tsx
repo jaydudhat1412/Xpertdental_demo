@@ -197,9 +197,9 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
             {[
-              { icon: Shield, title: "Advanced Technology", desc: "State-of-the-art equipment for precise diagnosis.", color: "bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400" },
-              { icon: Clock, title: "Flexible Timings", desc: "Open on weekends and evenings to suit your schedule.", color: "bg-teal-50 dark:bg-teal-950/60 text-teal-600 dark:text-teal-400" },
-              { icon: Calendar, title: "Easy Booking", desc: "Book your appointment online in just a few clicks.", color: "bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400" }
+              { icon: Shield, title: "Advanced Technology", desc: "State-of-the-art equipment for precise diagnosis.", color: "bg-blue-50 text-blue-600" },
+              { icon: Clock, title: "Flexible Timings", desc: "Open on weekends and evenings to suit your schedule.", color: "bg-teal-50 text-teal-600" },
+              { icon: Calendar, title: "Easy Booking", desc: "Book your appointment online in just a few clicks.", color: "bg-blue-50 text-blue-600" }
             ].map((feature, idx) => (
               <motion.div 
                 variants={itemVariants}
