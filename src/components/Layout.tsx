@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
 import { clinicData } from "../data/mockData";
 import { cn } from "../lib/utils";
-import ThemeToggle from "./ThemeToggle";
 import BackToTop from "./BackToTop";
 import WhatsAppButton from "./WhatsAppButton";
 
@@ -110,7 +109,6 @@ export default function Layout() {
               ))}
               
               {/* Theme Toggle Button */}
-              <ThemeToggle />
               <a href={`tel:${clinicData.phone.replace(/[^0-9+]/g, '')}`}
                 className="bg-gray-900 dark:bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-600 dark:hover:bg-blue-500 transition-colors duration-300 shadow-md hover:shadow-md hover:-translate-y-0.5 transform"
               >
@@ -120,7 +118,6 @@ export default function Layout() {
 
             {/* Mobile menu button and theme toggle */}
             <div className="flex items-center space-x-3 md:hidden">
-              <ThemeToggle />
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none p-2 rounded-lg"
