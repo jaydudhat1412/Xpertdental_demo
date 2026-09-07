@@ -260,8 +260,8 @@ export default function Layout() {
               © {new Date().getFullYear()} {clinicData.clinic_name}. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm text-gray-500">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+              <Link to="/" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/" className="hover:text-white transition-colors">Terms of Service</Link>
             </div>
           </div>
         </div>

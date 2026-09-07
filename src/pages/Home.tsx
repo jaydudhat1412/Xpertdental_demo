@@ -95,9 +95,9 @@ export default function Home() {
             >
               <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-slate-300 text-sm font-semibold mb-8">
                 <Sparkles className="w-4 h-4 text-slate-500" />
-                <span className="uppercase tracking-widest text-xs">Aesthetic Dentistry</span>
+                <span className="font-semibold text-sm">Aesthetic Dentistry</span>
               </div>
-              <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-[1.1] mb-6 tracking-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-[1.1] mb-6 tracking-tight">
                 Refining your <span className="italic text-slate-600 dark:text-slate-400 font-serif">natural smile</span>
               </h1>
               <p className="text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-lg leading-relaxed">
@@ -105,7 +105,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href={`tel:${clinicData.phone.replace(/[^0-9+]/g, '')}`}
-                  className="group relative inline-flex justify-center items-center px-8 py-4 text-base font-bold rounded-full overflow-hidden text-white bg-gray-900 dark:bg-blue-600 shadow-md transition-all hover:scale-105 hover:shadow-blue-500/20"
+                  className="group relative flex w-full sm:w-auto justify-center items-center px-8 py-4 text-base font-bold rounded-full overflow-hidden text-white bg-gray-900 dark:bg-blue-600 shadow-md transition-all hover:scale-105 hover:shadow-blue-500/20"
                 >
                   <span className="absolute inset-0 w-full h-full bg-blue-700 dark:bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                   <span className="relative flex items-center">
@@ -115,7 +115,7 @@ export default function Home() {
                 </a>
                 <Link
                   to="/services"
-                  className="inline-flex justify-center items-center px-8 py-4 border border-gray-200 dark:border-gray-700 text-base font-semibold rounded-full text-gray-700 dark:text-gray-200 bg-white/50 dark:bg-gray-800/50  hover:bg-white dark:hover:bg-gray-800 hover:shadow-lg transition-all"
+                  className="flex w-full sm:w-auto justify-center items-center px-8 py-4 border-2 border-gray-400 dark:border-gray-500 text-base font-semibold rounded-full text-gray-900 dark:text-white bg-white/90 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-700 hover:border-gray-500 dark:hover:border-gray-400 hover:shadow-lg transition-all"
                 >
                   Explore Services
                 </Link>
@@ -144,7 +144,7 @@ export default function Home() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.7 }}
-                    referrerPolicy="no-referrer"
+                    loading="lazy" referrerPolicy="no-referrer"
                   />
                 </AnimatePresence>
                 <div className="absolute inset-0 bg-black/20"></div>
@@ -155,10 +155,13 @@ export default function Home() {
                     <button
                       key={idx}
                       onClick={() => setCurrentHeroImage(idx)}
-                      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                        idx === currentHeroImage ? "bg-white w-8" : "bg-white/50 hover:bg-white/80"
-                      }`}
-                    />
+                      className="p-2 cursor-pointer focus:outline-none"
+                      aria-label={`Go to slide ${idx + 1}`}
+                    >
+                      <div className={`rounded-full transition-all duration-300 ${
+                        idx === currentHeroImage ? "bg-white w-10 h-3" : "bg-white/60 hover:bg-white/90 w-3 h-3"
+                      }`} />
+                    </button>
                   ))}
                 </div>
               </div>
@@ -174,8 +177,8 @@ export default function Home() {
                   <Star className="w-6 h-6 md:w-8 md:h-8 text-yellow-500 fill-current" />
                 </div>
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white leading-none mb-1">4.9/5</h3>
-                  <p className="text-xs md:text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">From 1000+ Reviews</p>
+                  <div className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white leading-none mb-1">4.9/5</div>
+                  <p className="text-sm font-medium text-gray-500 dark:text-gray-400">From 1000+ Reviews</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -184,7 +187,7 @@ export default function Home() {
       </section>
 
       {/* Premium Bento Features */}
-      <section className="py-24 bg-white dark:bg-gray-900 transition-colors duration-200 relative">
+      <section className="py-16 md:py-24 bg-white dark:bg-gray-900 transition-colors duration-200 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             variants={containerVariants}
@@ -215,16 +218,16 @@ export default function Home() {
       </section>
 
       {/* Smooth Staggered Services */}
-      <section className="py-24 bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="max-w-2xl"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">Premium Services</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">Premium Services</h2>
               <p className="text-xl text-gray-600 dark:text-gray-300">Comprehensive dental care tailored to your specific needs.</p>
             </motion.div>
             <motion.div
@@ -247,13 +250,13 @@ export default function Home() {
           >
             {services.map((service) => (
               <motion.div variants={itemVariants} key={service.id}>
-                <Link to={`/services/${service.id}`} className="group block bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-500 h-full border border-gray-100 dark:border-gray-800 flex flex-col">
+                <Link to={`/services/${service.id}`} className="group block bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow-sm hover:shadow-md hover:border-blue-500/50 dark:hover:border-blue-400/50 hover:-translate-y-1 transition-all duration-500 h-full border border-gray-100 dark:border-gray-800 flex flex-col focus:outline-none focus:ring-2 focus:ring-blue-500/50">
                   <div className="h-56 overflow-hidden relative shrink-0">
                     <img
                       src={service.image_url}
                       alt={service.name}
                       className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
-                      referrerPolicy="no-referrer"
+                      loading="lazy" referrerPolicy="no-referrer"
                     />
                     <div className="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
                   </div>
@@ -272,7 +275,7 @@ export default function Home() {
       </section>
 
       {/* Photo Gallery Section */}
-      <section className="py-24 bg-white dark:bg-gray-900 transition-colors duration-200 relative">
+      <section className="py-16 md:py-24 bg-white dark:bg-gray-900 transition-colors duration-200 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
              initial={{ opacity: 0, y: 30 }}
@@ -280,7 +283,7 @@ export default function Home() {
              viewport={{ once: true }}
              className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight">Our Clinic</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight">Our Clinic</h2>
             <p className="text-gray-600 dark:text-gray-300 text-xl font-medium">Take a look inside our state-of-the-art facility.</p>
           </motion.div>
           <motion.div 
@@ -303,7 +306,7 @@ export default function Home() {
                   src={img.src}
                   alt={img.alt}
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  referrerPolicy="no-referrer"
+                  loading="lazy" referrerPolicy="no-referrer"
                 />
               </motion.div>
             ))}
@@ -312,7 +315,7 @@ export default function Home() {
       </section>
 
       {/* Oral Health Tips / Blog Section */}
-      <section className="py-24 bg-gray-50 dark:bg-gray-950 transition-colors duration-200 relative border-t border-gray-100 dark:border-gray-800">
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-950 transition-colors duration-200 relative border-t border-gray-100 dark:border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <motion.div 
@@ -325,7 +328,7 @@ export default function Home() {
                 <BookOpen className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                 <span>Dental Care Knowledge Base</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tight">Oral Health Tips & Advice</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tight">Oral Health Tips & Advice</h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 mt-3">Expert guidance and practical care tips from our clinical team to keep your smile healthy.</p>
             </motion.div>
 
@@ -334,13 +337,14 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="flex flex-wrap gap-2"
+              className="flex flex-nowrap overflow-x-auto gap-2 pb-4 -mb-4 md:pb-0 md:mb-0 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+              style={{ scrollbarWidth: 'none' }}
             >
               {["All", "Daily Care", "Gum Care", "Pediatric Care", "Restorative"].map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedTipCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${
+                  className={`px-4 py-2 rounded-full text-sm font-bold transition-all whitespace-nowrap snap-start ${
                     selectedTipCategory === category
                       ? "bg-blue-600 text-white shadow-md"
                       : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700"
@@ -367,14 +371,14 @@ export default function Home() {
                   <motion.div variants={itemVariants} key={tip.id}>
                     <div 
                       onClick={() => setActiveTip(tip)}
-                      className="group cursor-pointer bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-500 h-full border border-gray-100 dark:border-gray-800 flex flex-col hover:-translate-y-1"
+                      className="group cursor-pointer bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow-sm hover:shadow-md hover:border-blue-500/50 dark:hover:border-blue-400/50 hover:-translate-y-1 transition-all duration-500 h-full border border-gray-100 dark:border-gray-800 flex flex-col"
                     >
                       <div className="h-48 overflow-hidden relative shrink-0">
                         <img
                           src={tip.imageUrl}
                           alt={tip.title}
                           className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
-                          referrerPolicy="no-referrer"
+                          loading="lazy" referrerPolicy="no-referrer"
                         />
                         <div className="absolute top-4 left-4 bg-white/90 dark:bg-gray-900/90  px-3 py-1 rounded-full text-xs font-bold text-blue-700 dark:text-blue-400 shadow-md">
                           {tip.category}
@@ -435,7 +439,7 @@ export default function Home() {
                   src={activeTip.imageUrl}
                   alt={activeTip.title}
                   className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
+                  loading="lazy" referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-black/40"></div>
                 <div className="absolute bottom-6 left-6 right-6 text-white">
@@ -486,14 +490,14 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
                   <a href={`tel:${clinicData.phone.replace(/[^0-9+]/g, '')}`}
                     onClick={() => setActiveTip(null)}
-                    className="w-full sm:w-auto inline-flex justify-center items-center px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg transition-all"
+                    className="w-full sm:w-auto inline-flex justify-center items-center px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full shadow-lg transition-all"
                   >
                     Book Dental Checkup
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </a>
                   <button
                     onClick={() => setActiveTip(null)}
-                    className="w-full sm:w-auto px-6 py-3.5 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-bold rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all text-center"
+                    className="w-full sm:w-auto px-6 py-3.5 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-bold rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all text-center"
                   >
                     Close Advice
                   </button>
@@ -505,7 +509,7 @@ export default function Home() {
       </AnimatePresence>
 
       {/* Styled Testimonials Slider */}
-      <section className="py-24 bg-gray-900 text-white relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-gray-900 text-white relative overflow-hidden">
         {/* Abstract background shapes */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/30 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-600/20 rounded-full blur-[100px] -translate-x-1/3 translate-y-1/3"></div>
@@ -517,7 +521,7 @@ export default function Home() {
              viewport={{ once: true }}
              className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Patient Stories</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 tracking-tight">Patient Stories</h2>
             <p className="text-gray-400 text-xl font-medium">Listen to what our community says about us.</p>
           </motion.div>
           
@@ -573,10 +577,13 @@ export default function Home() {
                 <button
                   key={idx}
                   onClick={() => setCurrentTestimonial(idx)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                    idx === currentTestimonial ? "bg-blue-500 w-8" : "bg-white/30 hover:bg-white/60"
-                  }`}
-                />
+                  className="p-2 cursor-pointer focus:outline-none"
+                  aria-label={`Go to testimonial ${idx + 1}`}
+                >
+                  <div className={`rounded-full transition-all duration-300 ${
+                    idx === currentTestimonial ? "bg-blue-500 w-10 h-3" : "bg-white/40 hover:bg-white/70 w-3 h-3"
+                  }`} />
+                </button>
               ))}
             </div>
           </div>
@@ -584,7 +591,7 @@ export default function Home() {
       </section>
 
       {/* Styled Doctors Section */}
-      <section className="py-24 bg-white dark:bg-gray-900 transition-colors duration-200 overflow-hidden relative">
+      <section className="py-16 md:py-24 bg-white dark:bg-gray-900 transition-colors duration-200 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
              initial={{ opacity: 0, y: 30 }}
@@ -592,7 +599,7 @@ export default function Home() {
              viewport={{ once: true }}
              className="text-center max-w-3xl mx-auto mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">Meet Our Experts</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">Meet Our Experts</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300">Highly qualified and experienced professionals dedicated to your smile.</p>
           </motion.div>
 
@@ -612,7 +619,7 @@ export default function Home() {
                     src={doctor.photo_url}
                     alt={doctor.name}
                     className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
+                    loading="lazy" referrerPolicy="no-referrer"
                   />
                   
                 </div>
@@ -634,7 +641,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
              initial={{ opacity: 0, y: 30 }}
@@ -642,7 +649,7 @@ export default function Home() {
              viewport={{ once: true }}
              className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">Frequently Asked Questions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">Frequently Asked Questions</h2>
             <p className="text-xl text-gray-600 dark:text-gray-300">Answers to common concerns about treatments, recovery, and pricing.</p>
           </motion.div>
 
