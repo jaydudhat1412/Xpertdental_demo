@@ -33,7 +33,6 @@ export const doctors = [
     experience_years: 4,
     qualifications: "BDS, MDS (OMFS)",
     bio: "Dr. Kishan is a highly skilled oral and maxillofacial surgeon specializing in complex extractions and jaw surgeries.",
-    consultation_fee: 500,
     available_days: ["Mon"," Tue","Wed", "Fri","Sat"],
     timings: "10:00 AM - 2:00 PM",
     rating: 4.9,
@@ -48,7 +47,6 @@ export const doctors = [
     experience_years: 6,
     qualifications: "BDS, MDS (Perio)",
     bio: "Dr. Nikunj has over a decade of experience in gum diseases, dental implants, and periodontal surgeries.",
-    consultation_fee: 800,
     available_days: ["Tue", "Thu", "Sat"],
     timings: "4:00 PM - 8:00 PM",
     rating: 4.8,
@@ -63,7 +61,6 @@ export const services = [
     department_id: 1,
     description: "Permanent replacement for missing teeth using titanium posts.",
     duration: "2-3 sessions",
-    cost_range: "₹25,000 - ₹50,000",
     image_url: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80",
     benefits: ["Looks and feels like natural teeth", "Prevents bone loss", "Long-lasting solution"],
     procedure_steps: ["Initial Consultation", "Implant Placement", "Healing Period", "Crown Placement"]
@@ -74,7 +71,6 @@ export const services = [
     department_id: 3,
     description: "Professional bleaching to brighten your smile.",
     duration: "1 session",
-    cost_range: "₹5,000 - ₹10,000",
     image_url: "/teeth-whitening.png",
     benefits: ["Removes stubborn stains", "Boosts confidence", "Quick and painless"],
     procedure_steps: ["Dental Cleaning", "Application of Whitening Gel", "Laser Activation", "Post-treatment Care"]
@@ -85,7 +81,6 @@ export const services = [
     department_id: 2,
     description: "Straighten crooked teeth and correct bite issues.",
     duration: "12-24 months",
-    cost_range: "₹30,000 - ₹80,000",
     image_url: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&q=80",
     benefits: ["Improves oral hygiene", "Enhances facial aesthetics", "Corrects bite problems"],
     procedure_steps: ["Consultation & X-rays", "Treatment Planning", "Fitting Braces/Aligners", "Regular Adjustments"]
@@ -96,7 +91,6 @@ export const services = [
     department_id: 1,
     description: "Save a severely decayed or infected tooth.",
     duration: "1-2 sessions",
-    cost_range: "₹4,000 - ₹8,000",
     image_url: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80",
     benefits: ["Relieves dental pain", "Saves the natural tooth", "Prevents spread of infection"],
     procedure_steps: ["X-ray & Anesthesia", "Removal of Infected Pulp", "Cleaning & Shaping", "Filling & Sealing", "Crown Placement"]
@@ -149,8 +143,8 @@ export const testimonials = [
 export const faqs = [
   {
     id: 1,
-    question: "How much does a dental implant cost?",
-    answer: "The cost of a dental implant varies depending on the complexity of the case, but it generally ranges from ₹25,000 to ₹40,000 per implant. We offer flexible payment plans to make the procedure more accessible.",
+    question: "Are your treatments affordable?",
+    answer: "The cost of our treatments varies depending on the complexity of the case. We offer flexible payment plans to make procedures more accessible. Please contact us for a detailed consultation.",
     category: "Pricing"
   },
   {
@@ -173,7 +167,7 @@ export const faqs = [
   },
   {
     id: 5,
-    question: "Are there hidden charges in your pricing?",
+    question: "Are there hidden charges in your treatments?",
     answer: "No, we believe in complete transparency. After your initial consultation and diagnosis, we provide a detailed breakdown of the treatment plan and associated costs before proceeding with any procedure.",
     category: "Pricing"
   },

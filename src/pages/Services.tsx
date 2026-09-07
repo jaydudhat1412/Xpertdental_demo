@@ -98,7 +98,6 @@ export default function Services() {
                         <div className="absolute inset-0 bg-black/30 opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
                         <div className="absolute bottom-6 left-6 right-6">
                            <h2 className="text-3xl font-bold text-white mb-2">{service.name}</h2>
-                           <p className="text-white/90 font-medium">{service.cost_range}</p>
                         </div>
                       </div>
                       

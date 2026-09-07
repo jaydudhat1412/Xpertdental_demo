@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { Star, Award, Clock, Calendar, Languages, IndianRupee, MessageSquareHeart } from "lucide-react";
+import { Star, Award, Clock, Calendar, Languages, MessageSquareHeart } from "lucide-react";
 import { doctors, testimonials, clinicData } from "../data/mockData";
 import { useState, useEffect } from "react";
 
@@ -129,13 +129,6 @@ export default function DoctorProfile() {
                   <div>
                     <p className="text-sm text-gray-500 dark:text-gray-400">Languages</p>
                     <p className="font-medium text-gray-900 dark:text-white">{doctor.languages_spoken.join(", ")}</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <IndianRupee className="w-6 h-6 text-gray-400 dark:text-gray-500 mr-3 shrink-0" />
-                  <div>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">Consultation Fee</p>
-                    <p className="font-medium text-gray-900 dark:text-white">₹{doctor.consultation_fee}</p>
                   </div>
                 </div>
               </div>

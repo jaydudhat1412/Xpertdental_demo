@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { CheckCircle2, Clock, IndianRupee, ArrowRight } from "lucide-react";
+import { CheckCircle2, Clock, ArrowRight } from "lucide-react";
 import { services, clinicData } from "../data/mockData";
 import { useState, useEffect } from "react";
 
@@ -179,13 +179,6 @@ export default function ServiceDetail() {
                   <div>
                     <p className="text-sm text-gray-500 dark:text-gray-400">Duration</p>
                     <p className="font-semibold text-gray-900 dark:text-white">{service.duration}</p>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <IndianRupee className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-4" />
-                  <div>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">Estimated Cost</p>
-                    <p className="font-semibold text-gray-900 dark:text-white">{service.cost_range}</p>
                   </div>
                 </div>
               </div>

@@ -153,24 +153,24 @@ export default function Contact() {
              className="space-y-8"
           >
             {/* Contact Cards */}
-            <div className="bg-blue-600 dark:bg-blue-800 p-10 rounded-2xl shadow-md text-white">
+            <div className="bg-blue-600 dark:bg-blue-800 p-6 md:p-10 rounded-2xl shadow-md text-white">
               <h2 className="text-3xl font-bold mb-8">Contact Info</h2>
               <div className="space-y-8">
-                <div className="flex bg-gray-100 dark:bg-gray-800 p-5 rounded-2xl ">
+                <div className="flex bg-blue-700 p-5 rounded-2xl ">
                   <Phone className="w-8 h-8 mr-5 text-blue-200 shrink-0" />
                   <div>
                     <h3 className="font-bold text-blue-100 text-sm tracking-wide uppercase mb-1">Phone Number</h3>
                     <p className="text-xl font-medium">{clinicData.phone}</p>
                   </div>
                 </div>
-                <div className="flex bg-gray-100 dark:bg-gray-800 p-5 rounded-2xl ">
+                <div className="flex bg-blue-700 p-5 rounded-2xl ">
                   <Mail className="w-8 h-8 mr-5 text-blue-200 shrink-0" />
                   <div>
                     <h3 className="font-bold text-blue-100 text-sm tracking-wide uppercase mb-1">Email Address</h3>
                     <p className="text-xl font-medium">{clinicData.email}</p>
                   </div>
                 </div>
-                <div className="flex bg-gray-100 dark:bg-gray-800 p-5 rounded-2xl ">
+                <div className="flex bg-blue-700 p-5 rounded-2xl ">
                   <MapPin className="w-8 h-8 mr-5 text-blue-200 shrink-0" />
                   <div>
                     <h3 className="font-bold text-blue-100 text-sm tracking-wide uppercase mb-1">Clinic Address</h3>
@@ -180,7 +180,7 @@ export default function Contact() {
 
                 <div className="pt-4 border-t border-white/15">
                   <h3 className="font-bold text-blue-100 text-sm tracking-wide uppercase mb-3">Follow Us On Social Media</h3>
-                  <div className="flex space-x-4">
+                  <div className="flex flex-col sm:flex-row gap-4 ">
                     <a 
                       href={clinicData.social.instagram} 
                       target="_blank" 
