@@ -72,18 +72,8 @@ export default function Home() {
   return (
     <div className="flex flex-col overflow-hidden">
       {/* Enhanced Hero Section with Image Slider */}
-      <section className="relative min-h-[90vh] flex items-center bg-gray-50 dark:bg-gray-950 transition-colors duration-200 overflow-hidden">
-        {/* Subtle motion background element */}
-        <motion.div 
-          className="absolute -top-[20%] -right-[10%] w-[70vw] h-[70vw] rounded-full bg-blue-100/50 dark:bg-blue-950/20 blur-3xl opacity-60"
-          animate={{ scale: [1, 1.05, 1], rotate: [0, 5, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        />
-        <motion.div 
-          className="absolute -bottom-[10%] -left-[10%] w-[50vw] h-[50vw] rounded-full bg-teal-50/60 dark:bg-teal-950/20 blur-3xl opacity-60"
-          animate={{ scale: [1, 1.1, 1] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        />
+      <section className="relative min-h-[90vh] flex items-center bg-gray-50 dark:bg-[#050400] transition-colors duration-200 overflow-hidden">
+
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 mt-10 md:mt-0 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -93,7 +83,7 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm text-slate-700 dark:text-slate-300 text-sm font-semibold mb-8">
+              <div className="inline-flex items-center gap-2 py-2 px-4 rounded-sm bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700  text-slate-700 dark:text-slate-300 text-sm font-semibold mb-8">
                 <Sparkles className="w-4 h-4 text-slate-500" />
                 <span className="font-semibold text-sm">Aesthetic Dentistry</span>
               </div>
@@ -103,22 +93,37 @@ export default function Home() {
               <p className="text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-lg leading-relaxed">
                 Precision dental care focused on longevity, aesthetics, and your complete comfort.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <a href={`tel:${clinicData.phone.replace(/[^0-9+]/g, '')}`}
-                  className="group relative flex w-full sm:w-auto justify-center items-center px-8 py-4 text-base font-bold rounded-full overflow-hidden text-white bg-gray-900 dark:bg-blue-600 shadow-md transition-all hover:scale-105 hover:shadow-blue-500/20"
+                  className="group relative flex w-full sm:w-auto justify-center items-center px-8 py-4 text-sm tracking-widest uppercase font-bold rounded-sm overflow-hidden text-white bg-gray-900 dark:bg-blue-600 transition-all hover:bg-black dark:hover:bg-blue-500"
                 >
-                  <span className="absolute inset-0 w-full h-full bg-blue-700 dark:bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                   <span className="relative flex items-center">
                     Book Appointment
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </a>
                 <Link
                   to="/services"
-                  className="flex w-full sm:w-auto justify-center items-center px-8 py-4 border-2 border-gray-400 dark:border-gray-500 text-base font-semibold rounded-full text-gray-900 dark:text-white bg-white/90 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-700 hover:border-gray-500 dark:hover:border-gray-400 hover:shadow-lg transition-all"
+                  className="flex w-full sm:w-auto justify-center items-center px-8 py-4 border border-gray-300 dark:border-gray-700 text-sm tracking-widest uppercase font-bold rounded-sm text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all"
                 >
                   Explore Services
                 </Link>
+              </div>
+              
+              <div className="flex items-center gap-3 pt-4 border-t border-gray-100 dark:border-gray-800/60 max-w-md">
+                <div className="flex -space-x-2">
+                  <img loading="lazy" referrerPolicy="no-referrer" src="https://i.pravatar.cc/100?img=1" alt="Patient" className="w-10 h-10 rounded-full border-2 border-white dark:border-gray-950" />
+                  <img loading="lazy" referrerPolicy="no-referrer" src="https://i.pravatar.cc/100?img=5" alt="Patient" className="w-10 h-10 rounded-full border-2 border-white dark:border-gray-950" />
+                  <img loading="lazy" referrerPolicy="no-referrer" src="https://i.pravatar.cc/100?img=8" alt="Patient" className="w-10 h-10 rounded-full border-2 border-white dark:border-gray-950" />
+                </div>
+                <div className="flex flex-col">
+                  <div className="flex items-center gap-1">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star key={star} className="w-3.5 h-3.5 text-yellow-500 fill-current" />
+                    ))}
+                    <span className="text-sm font-bold ml-1 text-gray-900 dark:text-white">4.9/5</span>
+                  </div>
+                  <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">From 1,000+ satisfied patients</span>
+                </div>
               </div>
             </motion.div>
             
@@ -128,7 +133,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="lg:col-span-6 relative z-10"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-md border-4 border-white/80 dark:border-gray-800/80 aspect-[4/3] md:aspect-auto md:h-[600px] bg-gray-100 dark:bg-gray-900">
+              <div className="relative rounded-sm overflow-hidden  border-4 border-white/80 dark:border-gray-800/80 aspect-[4/3] md:aspect-auto md:h-[600px] bg-gray-100 dark:bg-[#0a0801]">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={currentHeroImage}
@@ -144,7 +149,7 @@ export default function Home() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.7 }}
-                    loading="lazy" referrerPolicy="no-referrer"
+                    fetchPriority="high"
                   />
                 </AnimatePresence>
                 <div className="absolute inset-0 bg-black/20"></div>
@@ -158,7 +163,7 @@ export default function Home() {
                       className="p-2 cursor-pointer focus:outline-none"
                       aria-label={`Go to slide ${idx + 1}`}
                     >
-                      <div className={`rounded-full transition-all duration-300 ${
+                      <div className={`rounded-sm transition-all duration-300 ${
                         idx === currentHeroImage ? "bg-white w-10 h-3" : "bg-white/60 hover:bg-white/90 w-3 h-3"
                       }`} />
                     </button>
@@ -166,28 +171,14 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Floating review badge */}
-              <motion.div 
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6, type: "spring", stiffness: 100 }}
-                className="absolute -bottom-6 -left-6 md:bottom-12 md:-left-12 bg-white/95 dark:bg-gray-800/95  p-5 md:p-6 rounded-3xl shadow-md border border-white/50 dark:border-gray-700/50 z-30 flex items-center gap-4"
-              >
-                <div className="bg-yellow-100 dark:bg-yellow-950/60 p-3 rounded-2xl shrink-0">
-                  <Star className="w-6 h-6 md:w-8 md:h-8 text-yellow-500 fill-current" />
-                </div>
-                <div>
-                  <div className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white leading-none mb-1">4.9/5</div>
-                  <p className="text-sm font-medium text-gray-500 dark:text-gray-400">From 1000+ Reviews</p>
-                </div>
-              </motion.div>
+
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Premium Bento Features */}
-      <section className="py-16 md:py-24 bg-white dark:bg-gray-900 transition-colors duration-200 relative">
+      <section className="py-16 md:py-24 bg-white dark:bg-[#0a0801] transition-colors duration-200 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             variants={containerVariants}
@@ -197,17 +188,17 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
             {[
-              { icon: Shield, title: "Advanced Technology", desc: "State-of-the-art equipment for precise diagnosis.", color: "bg-blue-50 text-blue-600" },
-              { icon: Clock, title: "Flexible Timings", desc: "Open on weekends and evenings to suit your schedule.", color: "bg-teal-50 text-teal-600" },
-              { icon: Calendar, title: "Easy Booking", desc: "Book your appointment online in just a few clicks.", color: "bg-blue-50 text-blue-600" }
+              { icon: Shield, title: "Advanced Technology", desc: "State-of-the-art equipment for precise diagnosis." },
+              { icon: Clock, title: "Flexible Timings", desc: "Open on weekends and evenings to suit your schedule." },
+              { icon: Calendar, title: "Easy Booking", desc: "Book your appointment online in just a few clicks." }
             ].map((feature, idx) => (
               <motion.div 
                 variants={itemVariants}
                 key={idx} 
-                className="group flex flex-col p-8 rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-800/80 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                className="group flex flex-col p-8 rounded-sm border border-gray-100 dark:border-gray-800/60 bg-transparent hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors duration-300"
               >
-                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-transform group-hover:scale-110 duration-300 ${feature.color}`}>
-                  <feature.icon className="w-8 h-8" />
+                <div className="mb-6 text-gray-900 dark:text-gray-100 transition-transform group-hover:-translate-y-1 duration-300">
+                  <feature.icon className="w-8 h-8 stroke-[1.5]" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">{feature.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-medium">{feature.desc}</p>
@@ -218,7 +209,7 @@ export default function Home() {
       </section>
 
       {/* Smooth Staggered Services */}
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-[#050400] transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <motion.div 
@@ -250,20 +241,18 @@ export default function Home() {
           >
             {services.map((service) => (
               <motion.div variants={itemVariants} key={service.id}>
-                <Link to={`/services/${service.id}`} className="group block bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow-sm hover:shadow-md hover:border-blue-500/50 dark:hover:border-blue-400/50 hover:-translate-y-1 transition-all duration-500 h-full border border-gray-100 dark:border-gray-800 flex flex-col focus:outline-none focus:ring-2 focus:ring-blue-500/50">
+                <Link to={`/services/${service.id}`} className="group block bg-white dark:bg-[#0a0801] rounded-sm overflow-hidden hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-500 h-full border border-gray-100 dark:border-[#1f1602] flex flex-col focus:outline-none">
                   <div className="h-56 overflow-hidden relative shrink-0">
-                    <img
-                      src={service.image_url}
+                    <img loading="lazy" referrerPolicy="no-referrer" src={service.image_url}
                       alt={service.name}
-                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
-                      loading="lazy" referrerPolicy="no-referrer"
-                    />
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      />
                     <div className="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
                   </div>
-                  <div className="p-8 flex flex-col flex-grow">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{service.name}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 text-base mb-6 line-clamp-2 font-medium flex-grow">{service.description}</p>
-                    <div className="inline-flex max-w-max items-center border border-gray-200 dark:border-gray-700 px-4 py-2 rounded-full text-gray-700 dark:text-gray-300 font-semibold text-sm group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all">
+                  <div className="p-6 md:p-8 flex flex-col flex-grow">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">{service.name}</h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base mb-6 line-clamp-2 font-medium flex-grow">{service.description}</p>
+                    <div className="inline-flex max-w-max items-center text-gray-900 dark:text-white font-bold text-sm tracking-widest uppercase group-hover:underline underline-offset-4 transition-all">
                       Discover <ArrowRight className="ml-2 w-4 h-4" />
                     </div>
                   </div>
@@ -275,7 +264,7 @@ export default function Home() {
       </section>
 
       {/* Photo Gallery Section */}
-      <section className="py-16 md:py-24 bg-white dark:bg-gray-900 transition-colors duration-200 relative">
+      <section className="py-16 md:py-24 bg-white dark:bg-[#0a0801] transition-colors duration-200 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
              initial={{ opacity: 0, y: 30 }}
@@ -300,14 +289,12 @@ export default function Home() {
               <motion.div 
                 variants={itemVariants}
                 key={idx} 
-                className={`overflow-hidden rounded-2xl shadow-md group ${img.className}`}
+                className={`overflow-hidden rounded-sm  group ${img.className}`}
               >
-                <img
-                  src={img.src}
+                <img loading="lazy" referrerPolicy="no-referrer" src={img.src}
                   alt={img.alt}
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy" referrerPolicy="no-referrer"
-                />
+                  />
               </motion.div>
             ))}
           </motion.div>
@@ -315,7 +302,7 @@ export default function Home() {
       </section>
 
       {/* Oral Health Tips / Blog Section */}
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-950 transition-colors duration-200 relative border-t border-gray-100 dark:border-gray-800">
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-[#050400] transition-colors duration-200 relative border-t border-gray-100 dark:border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <motion.div 
@@ -324,7 +311,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="max-w-2xl"
             >
-              <div className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-sm font-semibold mb-4">
+              <div className="inline-flex items-center gap-2 py-1.5 px-4 rounded-sm bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-sm font-semibold mb-4">
                 <BookOpen className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                 <span>Dental Care Knowledge Base</span>
               </div>
@@ -344,9 +331,9 @@ export default function Home() {
                 <button
                   key={category}
                   onClick={() => setSelectedTipCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-bold transition-all whitespace-nowrap snap-start ${
+                  className={`px-4 py-2 rounded-sm text-sm font-bold transition-all whitespace-nowrap snap-start ${
                     selectedTipCategory === category
-                      ? "bg-blue-600 text-white shadow-md"
+                      ? "bg-blue-600 text-white "
                       : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700"
                   }`}
                 >
@@ -371,19 +358,17 @@ export default function Home() {
                   <motion.div variants={itemVariants} key={tip.id}>
                     <div 
                       onClick={() => setActiveTip(tip)}
-                      className="group cursor-pointer bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow-sm hover:shadow-md hover:border-blue-500/50 dark:hover:border-blue-400/50 hover:-translate-y-1 transition-all duration-500 h-full border border-gray-100 dark:border-gray-800 flex flex-col"
+                      className="group cursor-pointer bg-white dark:bg-[#0a0801] rounded-sm overflow-hidden  hover: hover:border-blue-500/50 dark:hover:border-blue-400/50 hover:-translate-y-1 transition-all duration-500 h-full border border-gray-100 dark:border-gray-800 flex flex-col"
                     >
                       <div className="h-48 overflow-hidden relative shrink-0">
-                        <img
-                          src={tip.imageUrl}
+                        <img loading="lazy" referrerPolicy="no-referrer" src={tip.imageUrl}
                           alt={tip.title}
                           className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
-                          loading="lazy" referrerPolicy="no-referrer"
-                        />
-                        <div className="absolute top-4 left-4 bg-white/90 dark:bg-gray-900/90  px-3 py-1 rounded-full text-xs font-bold text-blue-700 dark:text-blue-400 shadow-md">
+                          />
+                        <div className="absolute top-4 left-4 bg-white/90 dark:bg-[#0a0801]/90  px-3 py-1 rounded-sm text-xs font-bold text-blue-700 dark:text-blue-400 ">
                           {tip.category}
                         </div>
-                        <div className="absolute bottom-3 right-3 bg-gray-900/80  px-3 py-1 rounded-full text-xs text-white flex items-center gap-1 font-medium">
+                        <div className="absolute bottom-3 right-3 bg-gray-900/80  px-3 py-1 rounded-sm text-xs text-white flex items-center gap-1 font-medium">
                           <Clock className="w-3 h-3 text-blue-400" />
                           {tip.readTime}
                         </div>
@@ -424,26 +409,24 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-white dark:bg-gray-900 rounded-2xl shadow-md max-w-2xl w-full overflow-hidden relative my-auto border border-gray-100 dark:border-gray-800 max-h-[90vh] flex flex-col text-gray-900 dark:text-gray-100"
+              className="bg-white dark:bg-[#0a0801] rounded-sm  max-w-2xl w-full overflow-hidden relative my-auto border border-gray-100 dark:border-gray-800 max-h-[90vh] flex flex-col text-gray-900 dark:text-gray-100"
             >
               <button
                 onClick={() => setActiveTip(null)}
-                className="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center  transition-all hover:scale-110 shadow-lg"
+                className="absolute top-4 right-4 z-30 w-10 h-10 rounded-sm bg-black/50 hover:bg-black/70 text-white flex items-center justify-center  transition-all hover:scale-110 "
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
               </button>
 
               <div className="h-56 sm:h-64 relative overflow-hidden shrink-0">
-                <img
-                  src={activeTip.imageUrl}
+                <img loading="lazy" referrerPolicy="no-referrer" src={activeTip.imageUrl}
                   alt={activeTip.title}
                   className="w-full h-full object-cover"
-                  loading="lazy" referrerPolicy="no-referrer"
-                />
+                  />
                 <div className="absolute inset-0 bg-black/40"></div>
                 <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <div className="inline-block bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 shadow-md">
+                  <div className="inline-block bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-sm mb-3 ">
                     {activeTip.category}
                   </div>
                   <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
@@ -472,7 +455,7 @@ export default function Home() {
                   {activeTip.summary}
                 </p>
 
-                <div className="bg-blue-50/70 dark:bg-blue-950/40 border border-blue-100 dark:border-blue-900/50 rounded-2xl p-5 sm:p-6 mb-8">
+                <div className="bg-blue-50/70 dark:bg-blue-950/40 border border-blue-100 dark:border-blue-900/50 rounded-sm p-5 sm:p-6 mb-8">
                   <h4 className="font-bold text-blue-900 dark:text-blue-200 text-base sm:text-lg mb-4 flex items-center gap-2">
                     <Sparkles className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0" />
                     Key Dental Advice & Takeaways
@@ -490,14 +473,14 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
                   <a href={`tel:${clinicData.phone.replace(/[^0-9+]/g, '')}`}
                     onClick={() => setActiveTip(null)}
-                    className="w-full sm:w-auto inline-flex justify-center items-center px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full shadow-lg transition-all"
+                    className="w-full sm:w-auto inline-flex justify-center items-center px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-sm  transition-all"
                   >
                     Book Dental Checkup
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </a>
                   <button
                     onClick={() => setActiveTip(null)}
-                    className="w-full sm:w-auto px-6 py-3.5 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-bold rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all text-center"
+                    className="w-full sm:w-auto px-6 py-3.5 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-bold rounded-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition-all text-center"
                   >
                     Close Advice
                   </button>
@@ -511,8 +494,8 @@ export default function Home() {
       {/* Styled Testimonials Slider */}
       <section className="py-16 md:py-24 bg-gray-900 text-white relative overflow-hidden">
         {/* Abstract background shapes */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/30 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-600/20 rounded-full blur-[100px] -translate-x-1/3 translate-y-1/3"></div>
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/30 rounded-sm blur-[100px] translate-x-1/3 -translate-y-1/3"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-600/20 rounded-sm blur-[100px] -translate-x-1/3 translate-y-1/3"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
@@ -529,7 +512,7 @@ export default function Home() {
             <div className="absolute top-1/2 -left-4 md:-left-16 -translate-y-1/2 z-20">
               <button 
                 onClick={() => setCurrentTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))}
-                className="w-12 h-12 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-white transition-all hover:scale-110 shadow-md"
+                className="w-12 h-12 rounded-sm bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-white transition-all hover:scale-110 "
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
@@ -538,7 +521,7 @@ export default function Home() {
             <div className="absolute top-1/2 -right-4 md:-right-16 -translate-y-1/2 z-20">
               <button 
                 onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
-                className="w-12 h-12 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-white transition-all hover:scale-110 shadow-md"
+                className="w-12 h-12 rounded-sm bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-white transition-all hover:scale-110 "
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
@@ -552,7 +535,7 @@ export default function Home() {
                   animate={{ opacity: 1, x: 0, scale: 1 }}
                   exit={{ opacity: 0, x: -50, scale: 0.95 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="bg-slate-800 border border-slate-700 p-10 md:p-16 rounded-2xl text-center w-full"
+                  className="bg-slate-800 border border-slate-700 p-10 md:p-16 rounded-sm text-center w-full"
                 >
                   <div className="flex justify-center text-yellow-400 mb-8">
                     {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
@@ -580,7 +563,7 @@ export default function Home() {
                   className="p-2 cursor-pointer focus:outline-none"
                   aria-label={`Go to testimonial ${idx + 1}`}
                 >
-                  <div className={`rounded-full transition-all duration-300 ${
+                  <div className={`rounded-sm transition-all duration-300 ${
                     idx === currentTestimonial ? "bg-blue-500 w-10 h-3" : "bg-white/40 hover:bg-white/70 w-3 h-3"
                   }`} />
                 </button>
@@ -591,7 +574,7 @@ export default function Home() {
       </section>
 
       {/* Styled Doctors Section */}
-      <section className="py-16 md:py-24 bg-white dark:bg-gray-900 transition-colors duration-200 overflow-hidden relative">
+      <section className="py-16 md:py-24 bg-white dark:bg-[#0a0801] transition-colors duration-200 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
              initial={{ opacity: 0, y: 30 }}
@@ -612,14 +595,13 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 dark:bg-gray-800/90 rounded-2xl overflow-hidden group shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-500 border border-transparent dark:border-gray-700"
+                className="bg-gray-50 dark:bg-gray-800/90 rounded-sm overflow-hidden group  hover: hover:scale-[1.02] transition-all duration-500 border border-transparent dark:border-gray-700"
               >
-                <div className="aspect-[4/3] overflow-hidden relative m-4 md:m-6 rounded-3xl">
-                  <img
-                    src={doctor.photo_url}
+                <div className="aspect-[4/3] overflow-hidden relative m-4 md:m-6 rounded-sm">
+                  <img loading="lazy" referrerPolicy="no-referrer" src={doctor.photo_url}
                     alt={doctor.name}
                     className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy" referrerPolicy="no-referrer"
+                    fetchPriority="high"
                   />
                   
                 </div>
@@ -629,7 +611,7 @@ export default function Home() {
                   <p className="text-gray-600 dark:text-gray-300 mb-8 line-clamp-2 leading-relaxed">{doctor.bio}</p>
                   <Link
                     to={`/doctors/${doctor.id}`}
-                    className="block w-full text-center py-4 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-2xl font-bold text-gray-900 dark:text-white hover:bg-gray-900 dark:hover:bg-blue-600 hover:border-gray-900 dark:hover:border-blue-600 hover:text-white transition-all duration-300 shadow-sm"
+                    className="block w-full text-center py-4 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-sm font-bold text-gray-900 dark:text-white hover:bg-gray-900 dark:hover:bg-blue-600 hover:border-gray-900 dark:hover:border-blue-600 hover:text-white transition-all duration-300 "
                   >
                     View Full Profile
                   </Link>
@@ -641,7 +623,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-[#050400] transition-colors duration-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
              initial={{ opacity: 0, y: 30 }}
@@ -661,7 +643,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 shadow-sm"
+                className="bg-white dark:bg-[#0a0801] border border-gray-200 dark:border-gray-800 rounded-sm overflow-hidden transition-all duration-300 "
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === faq.id ? null : faq.id)}

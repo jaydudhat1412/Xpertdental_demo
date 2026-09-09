@@ -45,7 +45,7 @@ export default function Doctors() {
   };
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-950 min-h-screen pt-12 pb-24 border-t border-gray-100 dark:border-gray-800 transition-colors duration-200">
+    <div className="bg-gray-50 dark:bg-[#050400] min-h-screen pt-12 pb-24 border-t border-gray-100 dark:border-gray-800 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
@@ -94,14 +94,12 @@ export default function Doctors() {
             >
               {doctors.map((doctor) => (
                 <motion.div variants={itemVariants} key={doctor.id}>
-                   <div className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden group shadow-sm hover:shadow-md hover:-translate-y-2 transition-all duration-500 border border-gray-100 dark:border-gray-800">
-                    <div className="aspect-[4/5] overflow-hidden relative m-3 md:m-4 rounded-2xl">
-                      <img
-                        src={doctor.photo_url}
+                   <div className="bg-white dark:bg-[#0a0801] rounded-sm overflow-hidden group  hover: hover:-translate-y-2 transition-all duration-500 border border-gray-100 dark:border-gray-800">
+                    <div className="aspect-[4/5] overflow-hidden relative m-3 md:m-4 rounded-sm">
+                      <img loading="lazy" referrerPolicy="no-referrer" src={doctor.photo_url}
                         alt={doctor.name}
                         className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                        referrerPolicy="no-referrer"
-                      />
+                        />
                       <div className="absolute inset-0 bg-black/40"></div>
                       
                       
@@ -129,7 +127,7 @@ export default function Doctors() {
                       
                       <Link
                         to={`/doctors/${doctor.id}`}
-                        className="flex justify-between items-center w-full bg-gray-900 dark:bg-blue-600 text-white px-6 py-4 rounded-2xl font-bold hover:bg-blue-600 dark:hover:bg-blue-500 transition-colors duration-300"
+                        className="flex justify-between items-center w-full bg-gray-900 dark:bg-blue-600 text-white px-6 py-4 rounded-sm font-bold hover:bg-blue-600 dark:hover:bg-blue-500 transition-colors duration-300"
                       >
                         <span>View Full Profile</span>
                         <ChevronRight className="w-5 h-5 opacity-70" />

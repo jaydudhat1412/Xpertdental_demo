@@ -39,7 +39,7 @@ export default function Layout() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col font-sans text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-950 transition-colors duration-200">
+    <div className="min-h-screen flex flex-col font-sans text-gray-900 dark:text-gray-100 bg-white dark:bg-[#050400] transition-colors duration-200">
       {/* Top Bar */}
       <div className="bg-blue-900 dark:bg-slate-950 text-white py-2 px-4 sm:px-6 lg:px-8 text-sm hidden md:block border-b border-blue-800/50 dark:border-gray-800">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -69,7 +69,7 @@ export default function Layout() {
         className={cn(
           "sticky top-0 z-50 transition-all duration-300 ",
           scrolled 
-            ? "bg-[#0a0801]/95 shadow-md border-b border-[#1f1602]" 
+            ? "bg-[#0a0801]/95  border-b border-[#1f1602]" 
             : "bg-[#0a0801] border-b border-transparent"
         )}
       >
@@ -77,8 +77,7 @@ export default function Layout() {
           <div className="flex justify-between h-20">
             <div className="flex items-center">
               <Link to="/" className="flex items-center space-x-3 group">
-                <img
-                  src="/logo.svg"
+                <img loading="lazy" referrerPolicy="no-referrer" src="/logo.svg"
                   alt="Xpertdental Logo"
                   className="w-11 h-11 md:w-12 md:h-12 object-contain group-hover:scale-105 transition-transform duration-300"
                 />
@@ -103,7 +102,7 @@ export default function Layout() {
                   {isActive(link.path) && (
                     <motion.div 
                       layoutId="navbar-indicator"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-400 rounded-full" 
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-400 rounded-sm" 
                     />
                   )}
                 </Link>
@@ -111,7 +110,7 @@ export default function Layout() {
               
               {/* Theme Toggle Button */}
               <a href={`tel:${clinicData.phone.replace(/[^0-9+]/g, '')}`}
-                className="bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-500 transition-colors duration-300 shadow-md hover:shadow-md hover:-translate-y-0.5 transform"
+                className="bg-blue-600 text-white px-6 py-2.5 rounded-sm text-sm font-semibold hover:bg-blue-500 transition-colors duration-300  hover: hover:-translate-y-0.5 transform"
               >
                 Book Appointment
               </a>
@@ -121,7 +120,7 @@ export default function Layout() {
             <div className="flex items-center space-x-3 md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-300 hover:text-blue-400 focus:outline-none p-2 rounded-lg"
+                className="text-gray-300 hover:text-blue-400 focus:outline-none p-2 rounded-sm"
                 aria-label="Toggle Navigation Menu"
               >
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -137,7 +136,7 @@ export default function Layout() {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              className="md:hidden bg-[#0a0801] border-t border-[#1f1602] overflow-hidden shadow-md"
+              className="md:hidden bg-[#0a0801] border-t border-[#1f1602] overflow-hidden "
             >
               <div className="px-4 pt-2 pb-6 space-y-2">
                 {navLinks.map((link) => (
@@ -146,7 +145,7 @@ export default function Layout() {
                     to={link.path}
                     onClick={() => setIsMenuOpen(false)}
                     className={cn(
-                      "block px-4 py-3 rounded-xl text-base font-medium transition-colors",
+                      "block px-4 py-3 rounded-sm text-base font-medium transition-colors",
                       isActive(link.path)
                         ? "text-blue-400 bg-blue-900/20 font-bold"
                         : "text-gray-300 hover:text-blue-400 hover:bg-[#1f1602]"
@@ -158,7 +157,7 @@ export default function Layout() {
                 <a
                   href={`tel:${clinicData.phone.replace(/[^0-9+]/g, '')}`}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block w-full text-center mt-4 bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-500 transition-colors shadow-md"
+                  className="block w-full text-center mt-4 bg-blue-600 text-white px-6 py-3 rounded-sm font-medium hover:bg-blue-500 transition-colors "
                 >
                   Book Appointment
                 </a>
@@ -180,10 +179,9 @@ export default function Layout() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div>
               <div className="flex items-center space-x-3 mb-6">
-                <img
-                  src="/logo.svg"
+                <img loading="lazy" referrerPolicy="no-referrer" src="/logo.svg"
                   alt="Xpertdental Logo"
-                  className="w-12 h-12 rounded-full object-contain shadow-lg ring-1 ring-amber-500/40"
+                  className="w-12 h-12 rounded-sm object-contain  ring-1 ring-amber-500/40"
                 />
                 <span className="text-xl font-bold text-white">Xpertdental</span>
               </div>
@@ -196,7 +194,7 @@ export default function Layout() {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   aria-label="Facebook"
-                  className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition-all duration-300 shadow-md hover:scale-110"
+                  className="w-10 h-10 rounded-sm bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition-all duration-300  hover:scale-110"
                 >
                   <Facebook className="w-5 h-5" />
                 </a>
@@ -205,7 +203,7 @@ export default function Layout() {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   aria-label="Instagram"
-                  className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-pink-600 transition-all duration-300 shadow-md hover:scale-110"
+                  className="w-10 h-10 rounded-sm bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-pink-600 transition-all duration-300  hover:scale-110"
                 >
                   <Instagram className="w-5 h-5" />
                 </a>

@@ -14,13 +14,13 @@ export default function DoctorProfile() {
 
   if (isLoading) {
     return (
-      <div className="bg-gray-50 dark:bg-gray-950 min-h-screen transition-colors duration-200 pb-20 animate-pulse">
+      <div className="bg-gray-50 dark:bg-[#050400] min-h-screen transition-colors duration-200 pb-20 animate-pulse">
         {/* Profile Header Skeleton */}
-        <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+        <div className="bg-white dark:bg-[#0a0801] border-b border-gray-200 dark:border-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
             <div className="flex flex-col md:flex-row gap-12 items-start">
               <div className="w-full md:w-1/3 lg:w-1/4 shrink-0">
-                <div className="w-full aspect-square bg-gray-200 dark:bg-gray-800 rounded-2xl"></div>
+                <div className="w-full aspect-square bg-gray-200 dark:bg-gray-800 rounded-sm"></div>
               </div>
               <div className="flex-grow w-full">
                 <div className="flex flex-wrap items-center gap-4 mb-4">
@@ -41,7 +41,7 @@ export default function DoctorProfile() {
                   ))}
                 </div>
 
-                <div className="h-14 bg-gray-200 dark:bg-gray-800 rounded-xl w-48"></div>
+                <div className="h-14 bg-gray-200 dark:bg-gray-800 rounded-sm w-48"></div>
               </div>
             </div>
           </div>
@@ -64,7 +64,7 @@ export default function DoctorProfile() {
                 <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/4 mb-6"></div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {[1, 2].map(i => (
-                    <div key={i} className="bg-gray-200 dark:bg-gray-800 h-40 rounded-2xl"></div>
+                    <div key={i} className="bg-gray-200 dark:bg-gray-800 h-40 rounded-sm"></div>
                   ))}
                 </div>
               </section>
@@ -89,18 +89,16 @@ export default function DoctorProfile() {
   }
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-950 transition-colors duration-200 pb-20">
+    <div className="bg-gray-50 dark:bg-[#050400] transition-colors duration-200 pb-20">
       {/* Profile Header */}
-      <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+      <div className="bg-white dark:bg-[#0a0801] border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
           <div className="flex flex-col md:flex-row gap-12 items-start">
             <div className="w-full md:w-1/3 lg:w-1/4 shrink-0">
-              <img
-                src={doctor.photo_url}
+              <img loading="lazy" referrerPolicy="no-referrer" src={doctor.photo_url}
                 alt={doctor.name}
-                className="w-full aspect-square object-cover object-top rounded-2xl shadow-lg"
-                referrerPolicy="no-referrer"
-              />
+                className="w-full aspect-square object-cover object-top rounded-sm "
+                />
             </div>
             <div className="flex-grow">
               <div className="flex flex-wrap items-center gap-4 mb-4">
@@ -136,7 +134,7 @@ export default function DoctorProfile() {
               <div className="flex gap-4">
                 <a
                   href={`tel:${clinicData.phone.replace(/[^0-9+]/g, '')}`}
-                  className="px-8 py-4 bg-blue-600 dark:bg-blue-500 text-white rounded-xl font-bold hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors shadow-lg hover:shadow-md inline-flex items-center"
+                  className="px-8 py-4 bg-blue-600 dark:bg-blue-500 text-white rounded-sm font-bold hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors  hover: inline-flex items-center"
                 >
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Appointment
@@ -165,7 +163,7 @@ export default function DoctorProfile() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {testimonials.filter(t => t.doctor_id === doctor.id).map(testimonial => (
-                    <div key={testimonial.id} className="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col h-full">
+                    <div key={testimonial.id} className="bg-white dark:bg-[#0a0801] p-6 rounded-sm  border border-gray-100 dark:border-gray-800 flex flex-col h-full">
                       <div className="flex items-center mb-4">
                         <div>
                           <h4 className="font-bold text-gray-900 dark:text-white">{testimonial.patient_name}</h4>
@@ -189,7 +187,7 @@ export default function DoctorProfile() {
           </div>
 
           <div className="lg:col-span-1">
-            <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+            <div className="bg-white dark:bg-[#0a0801] p-8 rounded-sm  border border-gray-100 dark:border-gray-800">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
                 <Calendar className="w-6 h-6 mr-2 text-blue-600 dark:text-blue-400" />
                 Availability

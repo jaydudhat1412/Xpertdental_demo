@@ -53,7 +53,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-950 min-h-screen py-20 relative overflow-hidden transition-colors duration-200">
+    <div className="bg-gray-50 dark:bg-[#050400] min-h-screen py-20 relative overflow-hidden transition-colors duration-200">
       {/* Decorative blobs */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/50 dark:bg-blue-950/20 rounded-full blur-[100px] -translate-y-1/2"></div>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-100/30 dark:bg-teal-950/20 rounded-full blur-[100px] translate-y-1/2"></div>
@@ -77,18 +77,18 @@ export default function Contact() {
              animate={{ opacity: 1, x: 0 }}
              transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="bg-white dark:bg-gray-900 p-10 md:p-12 rounded-2xl shadow-md border border-gray-100 dark:border-gray-800 h-full">
+            <div className="bg-white dark:bg-[#0a0801] p-10 md:p-12 rounded-sm  border border-gray-100 dark:border-gray-800 h-full">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Send us a message</h2>
               
               {isSubmitted ? (
-                <div className="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 rounded-2xl p-6 text-center">
+                <div className="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 rounded-sm p-6 text-center">
                   <h3 className="text-xl font-bold text-green-800 dark:text-green-400 mb-2">Message Sent!</h3>
                   <p className="text-green-600 dark:text-green-300">We'll get back to you as soon as possible.</p>
                 </div>
               ) : (
                 <form className="space-y-6" onSubmit={handleSubmit}>
                   {error && (
-                    <div className="bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-2xl p-4 text-red-600 dark:text-red-400 text-sm">
+                    <div className="bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-sm p-4 text-red-600 dark:text-red-400 text-sm">
                       {error}
                     </div>
                   )}
@@ -99,7 +99,7 @@ export default function Contact() {
                         type="text" 
                         name="firstName"
                         required
-                        className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none" 
+                        className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-sm focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none" 
                         placeholder="John"
                       />
                     </div>
@@ -109,7 +109,7 @@ export default function Contact() {
                         type="text" 
                         name="lastName"
                         required
-                        className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none" 
+                        className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-sm focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none" 
                         placeholder="Doe"
                       />
                     </div>
@@ -120,7 +120,7 @@ export default function Contact() {
                       type="email" 
                       name="email"
                       required
-                      className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none" 
+                      className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-sm focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none" 
                       placeholder="john@example.com"
                     />
                   </div>
@@ -130,14 +130,14 @@ export default function Contact() {
                       rows={4} 
                       name="message"
                       required
-                      className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none resize-none" 
+                      className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-sm focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none resize-none" 
                       placeholder="How can we help you?"
                     ></textarea>
                   </div>
                   <button 
                     type="submit" 
                     disabled={isLoading}
-                    className="w-full bg-gray-900 dark:bg-blue-600 text-white font-bold py-4 rounded-2xl hover:bg-blue-600 dark:hover:bg-blue-500 transition-colors shadow-lg hover:shadow-md hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:-translate-y-0"
+                    className="w-full bg-gray-900 dark:bg-blue-600 text-white font-bold py-4 rounded-sm hover:bg-blue-600 dark:hover:bg-blue-500 transition-colors  hover: hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:-translate-y-0"
                   >
                     {isLoading ? "Sending..." : "Send Message"}
                   </button>
@@ -153,24 +153,24 @@ export default function Contact() {
              className="space-y-8"
           >
             {/* Contact Cards */}
-            <div className="bg-blue-600 dark:bg-blue-800 p-6 md:p-10 rounded-2xl shadow-md text-white">
+            <div className="bg-blue-600 dark:bg-blue-800 p-6 md:p-10 rounded-sm  text-white">
               <h2 className="text-3xl font-bold mb-8">Contact Info</h2>
               <div className="space-y-8">
-                <div className="flex bg-blue-700 p-5 rounded-2xl ">
+                <div className="flex bg-blue-700 p-5 rounded-sm ">
                   <Phone className="w-8 h-8 mr-5 text-blue-200 shrink-0" />
                   <div>
                     <h3 className="font-bold text-blue-100 text-sm tracking-wide uppercase mb-1">Phone Number</h3>
                     <p className="text-xl font-medium">{clinicData.phone}</p>
                   </div>
                 </div>
-                <div className="flex bg-blue-700 p-5 rounded-2xl ">
+                <div className="flex bg-blue-700 p-5 rounded-sm ">
                   <Mail className="w-8 h-8 mr-5 text-blue-200 shrink-0" />
                   <div>
                     <h3 className="font-bold text-blue-100 text-sm tracking-wide uppercase mb-1">Email Address</h3>
                     <p className="text-xl font-medium">{clinicData.email}</p>
                   </div>
                 </div>
-                <div className="flex bg-blue-700 p-5 rounded-2xl ">
+                <div className="flex bg-blue-700 p-5 rounded-sm ">
                   <MapPin className="w-8 h-8 mr-5 text-blue-200 shrink-0" />
                   <div>
                     <h3 className="font-bold text-blue-100 text-sm tracking-wide uppercase mb-1">Clinic Address</h3>
@@ -185,7 +185,7 @@ export default function Contact() {
                       href={clinicData.social.instagram} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center space-x-2 bg-pink-600 hover:bg-pink-700 text-white px-5 py-3 rounded-xl font-medium transition-all shadow-md hover:scale-105"
+                      className="flex items-center space-x-2 bg-pink-600 hover:bg-pink-700 text-white px-5 py-3 rounded-sm font-medium transition-all  hover:scale-105"
                     >
                       <Instagram className="w-5 h-5" />
                       <span>Instagram</span>
@@ -194,7 +194,7 @@ export default function Contact() {
                       href={clinicData.social.facebook} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-xl font-medium transition-all shadow-md hover:scale-105"
+                      className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-sm font-medium transition-all  hover:scale-105"
                     >
                       <Facebook className="w-5 h-5" />
                       <span>Facebook</span>
@@ -209,19 +209,17 @@ export default function Contact() {
               href={clinicData.mapUrl} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="bg-white dark:bg-gray-900 rounded-2xl h-64 flex items-center justify-center overflow-hidden relative shadow-lg border border-gray-100 dark:border-gray-800 group block"
+              className="bg-white dark:bg-[#0a0801] rounded-sm h-64 flex items-center justify-center overflow-hidden relative  border border-gray-100 dark:border-gray-800 group block"
             >
-              <img 
-                src="/clinicboardphoto.png"
+              <img loading="lazy" referrerPolicy="no-referrer" src="/clinicboardphoto.png"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&q=80";
                 }}
                 alt="Clinic Exterior" 
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                referrerPolicy="no-referrer"
-              />
+                />
               <div className="absolute inset-0 bg-gray-900/40 transition-colors duration-300 group-hover:bg-gray-900/50"></div>
-              <div className="relative bg-white/95 dark:bg-gray-900/95  px-6 py-3 rounded-full flex gap-3 items-center shadow-md group-hover:bg-blue-600 transition-colors duration-300">
+              <div className="relative bg-white/95 dark:bg-[#0a0801]/95  px-6 py-3 rounded-full flex gap-3 items-center  group-hover:bg-blue-600 transition-colors duration-300">
                 <MapPin className="w-5 h-5 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors duration-300" />
                 <span className="font-bold text-gray-900 dark:text-white group-hover:text-white text-sm uppercase tracking-wide transition-colors duration-300">View on Map</span>
               </div>

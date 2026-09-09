@@ -14,7 +14,7 @@ export default function ServiceDetail() {
 
   if (isLoading) {
     return (
-      <div className="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-200 pb-20 animate-pulse">
+      <div className="bg-white dark:bg-[#0a0801] min-h-screen transition-colors duration-200 pb-20 animate-pulse">
         {/* Hero Skeleton */}
         <div className="relative h-[40vh] md:h-[50vh] bg-gray-200 dark:bg-gray-800">
           <div className="absolute inset-0 flex items-center">
@@ -67,7 +67,7 @@ export default function ServiceDetail() {
 
             {/* Sidebar Skeleton */}
             <div className="lg:col-span-1">
-              <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700">
+              <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-sm border border-gray-100 dark:border-gray-700">
                 <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-1/2 mb-6"></div>
                 
                 <div className="space-y-6 mb-8">
@@ -82,7 +82,7 @@ export default function ServiceDetail() {
                   ))}
                 </div>
                 
-                <div className="h-12 bg-gray-200 dark:bg-gray-700 rounded-xl w-full"></div>
+                <div className="h-12 bg-gray-200 dark:bg-gray-700 rounded-sm w-full"></div>
               </div>
             </div>
           </div>
@@ -105,15 +105,13 @@ export default function ServiceDetail() {
   }
 
   return (
-    <div className="bg-white dark:bg-gray-900 transition-colors duration-200 pb-20">
+    <div className="bg-white dark:bg-[#0a0801] transition-colors duration-200 pb-20">
       {/* Hero */}
       <div className="relative h-[40vh] md:h-[50vh] bg-gray-900">
-        <img
-          src={service.image_url}
+        <img loading="lazy" referrerPolicy="no-referrer" src={service.image_url}
           alt={service.name}
           className="w-full h-full object-cover opacity-50"
-          referrerPolicy="no-referrer"
-        />
+          />
         <div className="absolute inset-0 flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{service.name}</h1>
@@ -170,7 +168,7 @@ export default function ServiceDetail() {
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl sticky top-28 border border-gray-100 dark:border-gray-700">
+            <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-sm sticky top-28 border border-gray-100 dark:border-gray-700">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Service Details</h3>
               
               <div className="space-y-6 mb-8">
@@ -184,7 +182,7 @@ export default function ServiceDetail() {
               </div>
 
               <a href={`tel:${clinicData.phone.replace(/[^0-9+]/g, '')}`}
-                className="flex items-center justify-center w-full mt-8 py-4 px-6 bg-blue-600 dark:bg-blue-500 text-white rounded-xl font-bold hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors shadow-md"
+                className="flex items-center justify-center w-full mt-8 py-4 px-6 bg-blue-600 dark:bg-blue-500 text-white rounded-sm font-bold hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors "
               >
                 Book Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />

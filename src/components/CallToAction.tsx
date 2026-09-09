@@ -7,9 +7,7 @@ export default function CallToAction() {
     <section className="bg-blue-600 dark:bg-blue-800 py-16 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
       
-      {/* Decorative background shapes */}
-      <div className="absolute -top-24 -left-24 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
-      <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-blue-400/20 rounded-full blur-2xl"></div>
+
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <motion.div
@@ -24,7 +22,7 @@ export default function CallToAction() {
           </p>
           <a 
             href={`tel:${clinicData.phone.replace(/[^0-9+]/g, '')}`}
-            className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold bg-white text-blue-600 rounded-full hover:bg-blue-50 transition-colors shadow-xl hover:shadow-2xl transform hover:-translate-y-1 duration-200"
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold bg-white text-blue-600 rounded-sm hover:bg-blue-50 transition-colors  hover: transform hover:-translate-y-1 duration-200"
           >
             <Phone className="mr-2 w-5 h-5" />
             Call to Book

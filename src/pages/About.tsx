@@ -11,14 +11,14 @@ export default function About() {
   ];
 
   return (
-    <div className="bg-white dark:bg-gray-900 transition-colors duration-200 overflow-hidden">
+    <div className="bg-white dark:bg-[#0a0801] transition-colors duration-200 overflow-hidden">
       {/* Hero Section */}
-      <section className="relative pt-24 pb-32 bg-gray-50 dark:bg-gray-950 transition-colors duration-200 overflow-hidden">
+      <section className="relative pt-24 pb-32 bg-gray-50 dark:bg-[#050400] transition-colors duration-200 overflow-hidden">
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 10, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-blue-50/50 dark:bg-blue-900/20 blur-3xl rounded-full"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-blue-50/50 dark:bg-blue-900/20 hidden rounded-full"
         />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -48,13 +48,11 @@ export default function About() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-               <div className="absolute -inset-4 bg-blue-50 dark:bg-gray-800 rounded-2xl transform -rotate-3 z-0"></div>
-              <img
-                src="/dr.Kishandudhat.png"
+               <div className="absolute -inset-4 bg-blue-50 dark:bg-gray-800 rounded-sm transform -rotate-3 z-0"></div>
+              <img loading="lazy" referrerPolicy="no-referrer" src="/dr.Kishandudhat.png"
                 alt="Dr. Kishan Dudhat"
-                className="relative z-10 w-full rounded-2xl shadow-md object-cover"
-                referrerPolicy="no-referrer"
-              />
+                className="relative z-10 w-full rounded-sm  object-cover"
+                />
             </motion.div>
 
             <motion.div
@@ -91,9 +89,9 @@ export default function About() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="bg-white dark:bg-gray-900 border border-white/10 rounded-2xl p-8 text-center"
+                className="bg-white dark:bg-[#0a0801] border border-white/10 rounded-sm p-8 text-center"
               >
-                <div className={`w-16 h-16 mx-auto ${stat.bg} ${stat.color} rounded-2xl flex items-center justify-center mb-6`}>
+                <div className={`w-16 h-16 mx-auto ${stat.bg} ${stat.color} rounded-sm flex items-center justify-center mb-6`}>
                   <stat.icon className="w-8 h-8" />
                 </div>
                 <div className="text-4xl lg:text-5xl font-bold text-white mb-2">{stat.value}</div>

@@ -2,10 +2,10 @@ import React from "react";
 
 export function ServiceCardSkeleton() {
   return (
-    <div className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 h-full flex flex-col shadow-sm animate-pulse">
+    <div className="bg-white dark:bg-[#0a0801] rounded-sm overflow-hidden border border-gray-100 dark:border-gray-800 h-full flex flex-col  animate-pulse">
       {/* Top Image Placeholder */}
       <div className="h-64 bg-gray-200 dark:bg-gray-800 relative p-6 flex flex-col justify-end">
-        <div className="h-7 bg-gray-300 dark:bg-gray-700 rounded-lg w-2/3 mb-2"></div>
+        <div className="h-7 bg-gray-300 dark:bg-gray-700 rounded-sm w-2/3 mb-2"></div>
         <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded-md w-1/3"></div>
       </div>
       
@@ -29,15 +29,15 @@ export function ServiceCardSkeleton() {
 
 export function DoctorCardSkeleton() {
   return (
-    <div className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm animate-pulse">
+    <div className="bg-white dark:bg-[#0a0801] rounded-sm overflow-hidden border border-gray-100 dark:border-gray-800  animate-pulse">
       {/* Aspect Ratio Image Container Placeholder */}
-      <div className="aspect-[4/5] bg-gray-200 dark:bg-gray-800 m-3 md:m-4 rounded-2xl relative p-6 flex flex-col justify-between">
+      <div className="aspect-[4/5] bg-gray-200 dark:bg-gray-800 m-3 md:m-4 rounded-sm relative p-6 flex flex-col justify-between">
         {/* Rating Badge Top Right */}
         <div className="self-end w-16 h-8 rounded-full bg-gray-300 dark:bg-gray-700"></div>
         
         {/* Doctor Name & Spec Bottom Left */}
         <div className="space-y-2">
-          <div className="h-7 bg-gray-300 dark:bg-gray-700 rounded-lg w-3/4"></div>
+          <div className="h-7 bg-gray-300 dark:bg-gray-700 rounded-sm w-3/4"></div>
           <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded-md w-1/2"></div>
         </div>
       </div>
@@ -58,7 +58,7 @@ export function DoctorCardSkeleton() {
         </div>
 
         {/* Full Profile Button Placeholder */}
-        <div className="h-14 bg-gray-200 dark:bg-gray-800 rounded-2xl w-full"></div>
+        <div className="h-14 bg-gray-200 dark:bg-gray-800 rounded-sm w-full"></div>
       </div>
     </div>
   );
