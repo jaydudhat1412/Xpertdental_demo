@@ -1,20 +1,27 @@
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import { Menu, X, Phone, Mail, MapPin, Sun, Moon } from "lucide-react";
 import { clinicData } from "../data/mockData";
 import { cn } from "../lib/utils";
+import { useTheme } from "../context/ThemeContext";
 import BackToTop from "./BackToTop";
 import WhatsAppButton from "./WhatsAppButton";
 import CallToAction from "./CallToAction";
+import Footer from "./Footer";
+import MobileNav from "./MobileNav";
+import { updateSeoMetadata } from "../utils/seo";
 
 export default function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
+  // Dynamically update SEO metadata (title, meta description, og/twitter tags, schema.org) on route change
   useEffect(() => {
     window.scrollTo(0, 0);
+    updateSeoMetadata(location.pathname);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -39,23 +46,23 @@ export default function Layout() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col font-sans text-gray-900 dark:text-gray-100 bg-white dark:bg-[#050400] transition-colors duration-200">
+    <div className="min-h-screen flex flex-col font-sans text-gray-900 dark:text-[#c1c1c1] bg-white dark:bg-[#121113] transition-colors duration-200">
       {/* Top Bar */}
-      <div className="bg-blue-900 dark:bg-slate-950 text-white py-2 px-4 sm:px-6 lg:px-8 text-sm hidden md:block border-b border-blue-800/50 dark:border-gray-800">
+      <div className="bg-[#527575] dark:bg-[#121212] text-white py-2 px-4 sm:px-6 lg:px-8 text-xs sm:text-sm hidden md:block border-b border-[#446060] dark:border-[#222222]">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-6">
-            <div className="flex items-center space-x-2">
-              <Phone className="w-4 h-4 text-blue-300" />
+            <a href={`tel:${clinicData.phone.replace(/[^0-9+]/g, '')}`} className="flex items-center space-x-2 hover:text-white/80 transition-colors">
+              <Phone className="w-3.5 h-3.5 text-[#e78a53]" />
               <span>{clinicData.phone}</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Mail className="w-4 h-4 text-blue-300" />
+            </a>
+            <a href={`mailto:${clinicData.email}`} className="flex items-center space-x-2 hover:text-white/80 transition-colors">
+              <Mail className="w-3.5 h-3.5 text-[#e78a53]" />
               <span>{clinicData.email}</span>
-            </div>
+            </a>
           </div>
           <div className="flex items-center space-x-4">
             <span className="flex items-center space-x-2">
-              <MapPin className="w-4 h-4 text-blue-300" />
+              <MapPin className="w-3.5 h-3.5 text-[#e78a53]" />
               <span>{clinicData.short_address}</span>
             </span>
           </div>
@@ -67,21 +74,28 @@ export default function Layout() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={cn(
-          "sticky top-0 z-50 transition-all duration-300 ",
+          "sticky top-0 z-50 transition-all duration-300 backdrop-blur-md",
           scrolled 
-            ? "bg-[#0a0801]/95  border-b border-[#1f1602]" 
-            : "bg-[#0a0801] border-b border-transparent"
+            ? "bg-white/95 dark:bg-[#121212]/95 border-b border-gray-200 dark:border-[#222222] shadow-xs" 
+            : "bg-white/90 dark:bg-[#121212]/90 border-b border-gray-100 dark:border-[#222222]"
         )}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-20">
+          <div className="flex justify-between h-20 items-center">
+            
+            {/* Brand Logo */}
             <div className="flex items-center">
               <Link to="/" className="flex items-center space-x-3 group">
-                <img loading="lazy" referrerPolicy="no-referrer" src="/logo.svg"
+                <img 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer" 
+                  src="/logo.svg"
                   alt="Xpertdental Logo"
-                  className="w-11 h-11 md:w-12 md:h-12 object-contain group-hover:scale-105 transition-transform duration-300"
+                  className="w-10 h-10 md:w-11 md:h-11 object-contain group-hover:scale-105 transition-transform duration-300"
                 />
-                <span className="text-2xl font-bold text-white tracking-tight">Xpert<span className="text-blue-400">dental</span></span>
+                <span className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">
+                  Xpert<span className="text-[#d87943] dark:text-[#e78a53]">dental</span>
+                </span>
               </Link>
             </div>
 
@@ -94,175 +108,87 @@ export default function Layout() {
                   className={cn(
                     "relative text-sm font-semibold tracking-wide transition-colors py-2",
                     isActive(link.path) 
-                      ? "text-blue-400" 
-                      : "text-gray-300 hover:text-blue-400"
+                      ? "text-[#d87943] dark:text-[#e78a53]" 
+                      : "text-gray-700 hover:text-[#d87943] dark:text-gray-300 dark:hover:text-[#e78a53]"
                   )}
                 >
                   {link.name}
                   {isActive(link.path) && (
                     <motion.div 
                       layoutId="navbar-indicator"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-400 rounded-sm" 
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#d87943] dark:bg-[#e78a53] rounded-sm" 
                     />
                   )}
                 </Link>
               ))}
               
               {/* Theme Toggle Button */}
-              <a href={`tel:${clinicData.phone.replace(/[^0-9+]/g, '')}`}
-                className="bg-blue-600 text-white px-6 py-2.5 rounded-sm text-sm font-semibold hover:bg-blue-500 transition-colors duration-300  hover: hover:-translate-y-0.5 transform"
+              <button
+                onClick={toggleTheme}
+                title={theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+                className="p-2 rounded-sm text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#222222] transition-colors cursor-pointer"
+                aria-label="Toggle Theme"
+              >
+                {theme === "dark" ? (
+                  <Sun className="w-5 h-5 text-yellow-400" />
+                ) : (
+                  <Moon className="w-5 h-5 text-gray-700" />
+                )}
+              </button>
+
+              {/* Book Appointment CTA Button */}
+              <a 
+                href={`tel:${clinicData.phone.replace(/[^0-9+]/g, '')}`}
+                className="bg-[#d87943] hover:bg-[#b85e2b] dark:bg-[#e78a53] dark:hover:bg-[#f59e6c] text-white dark:text-[#121113] px-6 py-2.5 rounded-sm text-sm font-bold tracking-wide transition-all duration-300 hover:-translate-y-0.5 transform shadow-xs"
               >
                 Book Appointment
               </a>
             </div>
 
-            {/* Mobile menu button and theme toggle */}
-            <div className="flex items-center space-x-3 md:hidden">
+            {/* Mobile Controls (Theme Toggle + Menu Button) */}
+            <div className="flex items-center space-x-2 md:hidden">
               <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-300 hover:text-blue-400 focus:outline-none p-2 rounded-sm"
-                aria-label="Toggle Navigation Menu"
+                onClick={toggleTheme}
+                title={theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+                className="p-2 rounded-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#222222] transition-colors"
+                aria-label="Toggle Theme"
               >
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                {theme === "dark" ? (
+                  <Sun className="w-5 h-5 text-yellow-400" />
+                ) : (
+                  <Moon className="w-5 h-5 text-gray-700" />
+                )}
+              </button>
+
+              <button
+                onClick={() => setIsMenuOpen(true)}
+                className="text-gray-800 dark:text-gray-200 hover:text-[#d87943] dark:hover:text-[#e78a53] focus:outline-none p-2 rounded-sm cursor-pointer"
+                aria-label="Open Navigation Menu"
+              >
+                <Menu className="h-6 w-6" />
               </button>
             </div>
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div 
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="md:hidden bg-[#0a0801] border-t border-[#1f1602] overflow-hidden "
-            >
-              <div className="px-4 pt-2 pb-6 space-y-2">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    to={link.path}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={cn(
-                      "block px-4 py-3 rounded-sm text-base font-medium transition-colors",
-                      isActive(link.path)
-                        ? "text-blue-400 bg-blue-900/20 font-bold"
-                        : "text-gray-300 hover:text-blue-400 hover:bg-[#1f1602]"
-                    )}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-                <a
-                  href={`tel:${clinicData.phone.replace(/[^0-9+]/g, '')}`}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block w-full text-center mt-4 bg-blue-600 text-white px-6 py-3 rounded-sm font-medium hover:bg-blue-500 transition-colors "
-                >
-                  Book Appointment
-                </a>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </motion.nav>
+
+      {/* Full-Screen Animated Mobile Navigation Drawer */}
+      <MobileNav
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
+        navLinks={navLinks}
+        isActive={isActive}
+      />
 
       {/* Main Content */}
       <main className="flex-grow">
         <Outlet />
       </main>
+      
       <CallToAction />
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white pt-16 pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-            <div>
-              <div className="flex items-center space-x-3 mb-6">
-                <img loading="lazy" referrerPolicy="no-referrer" src="/logo.svg"
-                  alt="Xpertdental Logo"
-                  className="w-12 h-12 rounded-sm object-contain  ring-1 ring-amber-500/40"
-                />
-                <span className="text-xl font-bold text-white">Xpertdental</span>
-              </div>
-              <p className="text-gray-400 mb-6">
-                Providing world-class dental care with state-of-the-art technology and compassionate professionals.
-              </p>
-              <div className="flex space-x-4">
-                <a 
-                  href={clinicData.social.facebook} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label="Facebook"
-                  className="w-10 h-10 rounded-sm bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition-all duration-300  hover:scale-110"
-                >
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a 
-                  href={clinicData.social.instagram} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label="Instagram"
-                  className="w-10 h-10 rounded-sm bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-pink-600 transition-all duration-300  hover:scale-110"
-                >
-                  <Instagram className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
-              <ul className="space-y-4">
-                {navLinks.map((link) => (
-                  <li key={link.name}>
-                    <Link to={link.path} className="text-gray-400 hover:text-white transition-colors">
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-6">Our Services</h3>
-              <ul className="space-y-4">
-                <li><Link to="/services" className="text-gray-400 hover:text-white transition-colors">Dental Implants</Link></li>
-                <li><Link to="/services" className="text-gray-400 hover:text-white transition-colors">Teeth Whitening</Link></li>
-                <li><Link to="/services" className="text-gray-400 hover:text-white transition-colors">Braces & Aligners</Link></li>
-                <li><Link to="/services" className="text-gray-400 hover:text-white transition-colors">Root Canal</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-6">Contact Us</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start space-x-3">
-                  <MapPin className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
-                  <span className="text-gray-400">{clinicData.address}</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-blue-500 shrink-0" />
-                  <span className="text-gray-400">{clinicData.phone}</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-blue-500 shrink-0" />
-                  <span className="text-gray-400">{clinicData.email}</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} {clinicData.clinic_name}. All rights reserved.
-            </p>
-            <div className="flex space-x-6 text-sm text-gray-500">
-              <Link to="/" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <Link to="/" className="hover:text-white transition-colors">Terms of Service</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       {/* Floating Buttons */}
       <WhatsAppButton />

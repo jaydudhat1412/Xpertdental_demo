@@ -27,7 +27,7 @@ export const doctors = [
   {
     id: 1,
     name: "Dr. Kishan Dudhat",
-    photo_url: "/dr.Kishandudhat.png",
+    photo_url: "/assets/dr.Kishandudhat.webp",
     specialization: "Oral & Maxillofacial Surgeon",
     department_id: 1,
     experience_years: 4,
@@ -41,7 +41,7 @@ export const doctors = [
   {
     id: 2,
     name: "Dr. Nikunj Bhuva",
-    photo_url: "/dr.nikunjbhuva.png",
+    photo_url: "/assets/dr.nikunjbhuva.webp",
     specialization: "Periodontist",
     department_id: 3,
     experience_years: 6,
@@ -61,7 +61,7 @@ export const services = [
     department_id: 1,
     description: "Permanent replacement for missing teeth using titanium posts.",
     duration: "2-3 sessions",
-    image_url: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80",
+    image_url: "/assets/dental-operatory-bg.webp",
     benefits: ["Looks and feels like natural teeth", "Prevents bone loss", "Long-lasting solution"],
     procedure_steps: ["Initial Consultation", "Implant Placement", "Healing Period", "Crown Placement"]
   },
@@ -71,7 +71,7 @@ export const services = [
     department_id: 3,
     description: "Professional bleaching to brighten your smile.",
     duration: "1 session",
-    image_url: "/teeth-whitening.png",
+    image_url: "/assets/teeth-whitening.webp",
     benefits: ["Removes stubborn stains", "Boosts confidence", "Quick and painless"],
     procedure_steps: ["Dental Cleaning", "Application of Whitening Gel", "Laser Activation", "Post-treatment Care"]
   },
@@ -81,7 +81,7 @@ export const services = [
     department_id: 2,
     description: "Straighten crooked teeth and correct bite issues.",
     duration: "12-24 months",
-    image_url: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&q=80",
+    image_url: "/assets/dental-braces.webp",
     benefits: ["Improves oral hygiene", "Enhances facial aesthetics", "Corrects bite problems"],
     procedure_steps: ["Consultation & X-rays", "Treatment Planning", "Fitting Braces/Aligners", "Regular Adjustments"]
   },
@@ -91,7 +91,7 @@ export const services = [
     department_id: 1,
     description: "Save a severely decayed or infected tooth.",
     duration: "1-2 sessions",
-    image_url: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80",
+    image_url: "/assets/dental-rootcanal.webp",
     benefits: ["Relieves dental pain", "Saves the natural tooth", "Prevents spread of infection"],
     procedure_steps: ["X-ray & Anesthesia", "Removal of Infected Pulp", "Cleaning & Shaping", "Filling & Sealing", "Crown Placement"]
   }
@@ -193,7 +193,7 @@ export const oralHealthTips = [
       "Avoid brushing immediately after eating acidic foods (like citrus or soda)—wait 30 minutes for enamel to remineralize.",
       "Stay hydrated with water throughout the day to rinse away food particles and boost natural saliva protection."
     ],
-    imageUrl: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "/assets/tip-brushing.webp",
     author: "Dr. Kishan Dudhat",
     date: "May 10, 2026"
   },
@@ -209,7 +209,7 @@ export const oralHealthTips = [
       "Schedule professional scaling and cleaning every 6 months to remove hardened tartar buildup.",
       "Avoid tobacco products, which significantly increase the risk of gum inflammation and bone loss."
     ],
-    imageUrl: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "/assets/tip-flossing.webp",
     author: "Dr. Nikunj Bhuva",
     date: "Apr 28, 2026"
   },
@@ -225,7 +225,7 @@ export const oralHealthTips = [
       "Turn brushing into a 2-minute musical game using timer apps or favorite songs.",
       "Ask about dental sealants to protect young molars from deep grooves that harbor decay."
     ],
-    imageUrl: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "/assets/tip-pediatric.webp",
     author: "Dr. Kishan Dudhat",
     date: "Apr 15, 2026"
   },
@@ -241,7 +241,7 @@ export const oralHealthTips = [
       "Implants do not affect surrounding healthy teeth and can last a lifetime with proper care.",
       "Consult with an Oral & Maxillofacial Surgeon to evaluate bone density and custom treatment plans."
     ],
-    imageUrl: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "/assets/tip-checkup.webp",
     author: "Dr. Kishan Dudhat",
     date: "Mar 30, 2026"
   },
@@ -257,7 +257,7 @@ export const oralHealthTips = [
       "Avoid aggressive brushing with hard bristles which can wear down protective enamel.",
       "Visit Xpertdental for professional fluoride application or bonding treatments if sensitivity persists."
     ],
-    imageUrl: "https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "/assets/tip-sensitivity.webp",
     author: "Dr. Nikunj Bhuva",
     date: "Mar 18, 2026"
   },
@@ -273,7 +273,7 @@ export const oralHealthTips = [
       "Stick to soft, cool foods like yogurt, smoothies, and mashed potatoes for the first 24-48 hours.",
       "Avoid using straws, smoking, or spitting vigorously to protect the blood clot and prevent dry socket."
     ],
-    imageUrl: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "/assets/tip-diet.webp",
     author: "Dr. Kishan Dudhat",
     date: "Feb 22, 2026"
   }

@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useEffect } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
-type Theme = "light";
+type Theme = "light" | "dark";
 
 interface ThemeContextType {
   theme: Theme;
@@ -11,16 +11,30 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const theme: Theme = "light";
+  const [theme, setThemeState] = useState<Theme>(() => {
+    const saved = localStorage.getItem("xpert_theme") as Theme | null;
+    if (saved === "light" || saved === "dark") return saved;
+    // Default to dark as requested in the user's custom CSS theme
+    return "dark";
+  });
 
   useEffect(() => {
     const root = document.documentElement;
-    root.classList.remove("dark");
-    localStorage.setItem("theme", "light");
-  }, []);
+    if (theme === "dark") {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+    localStorage.setItem("xpert_theme", theme);
+  }, [theme]);
 
-  const toggleTheme = () => {};
-  const setTheme = () => {};
+  const toggleTheme = () => {
+    setThemeState((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
+  const setTheme = (newTheme: Theme) => {
+    setThemeState(newTheme);
+  };
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>
