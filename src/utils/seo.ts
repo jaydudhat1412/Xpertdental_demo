@@ -93,7 +93,7 @@ export function getSeoConfigForPath(pathname: string): PageSeoConfig {
     case "/":
     default:
       return {
-        title: `Best Dental Clinic in Junagadh | Xpertdental Clinic Junagadh | Dr. Kishan Dudhat & Dr. Nikunj Bhuva`,
+        title: `Xpertdental Clinic Junagadh`,
         description: `Looking for the best dental clinic in Junagadh? Xpertdental Clinic Junagadh is the top multispecialty clinic housing Dr. Kishan Dudhat's clinic & Dr. Nikunj Bhuva's clinic at Zanzarda Chowkdi Bypass Road. Painless dental implants, root canal, teeth whitening & oral surgery. Call +91-9104827340.`,
         keywords: `best dental clinic in junagadh, xpertdental clinic junagadh, dr kishan dudhat's clinic, dr.nikunj bhuva's clinic, dr kishan dudhat clinic, dr nikunj bhuva clinic, best dental clinic junagadh, xpertdental clinic, xpertdental junagadh, xpert dental junagadh, dental clinic zanzarda road junagadh, dental hospital junagadh`,
         ogType: "website",

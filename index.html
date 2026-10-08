@@ -8,7 +8,7 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <title>Best Dental Clinic in Junagadh | Xpertdental Clinic Junagadh | Dr. Kishan Dudhat &amp; Dr. Nikunj Bhuva</title>
+    <title>Xpertdental Clinic Junagadh</title>
     <meta name="description" content="Looking for the best dental clinic in Junagadh? Xpertdental Clinic Junagadh is the top-rated clinic housing Dr. Kishan Dudhat's clinic and Dr. Nikunj Bhuva's clinic at Zanzarda Chowkdi Bypass Road. Painless dental implants, root canal, teeth whitening, smile makeover &amp; oral surgery. Call +91-9104827340." />
     <meta name="keywords" content="best dental clinic in junagadh, xpertdental clinic junagadh, dr kishan dudhat's clinic, dr.nikunj bhuva's clinic, dr kishan dudhat clinic, dr nikunj bhuva clinic, best dental clinic junagadh, xpertdental clinic, xpertdental junagadh, xpert dental junagadh, dr kishan dudhat, dr nikunj bhuva, dental clinic zanzarda road junagadh, dental hospital junagadh, best dentist in junagadh, dental implants junagadh, teeth whitening junagadh" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -24,7 +24,7 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Best Dental Clinic in Junagadh | Xpertdental Clinic Junagadh" />
+    <meta property="og:title" content="Xpertdental Clinic Junagadh" />
     <meta property="og:description" content="Xpertdental Clinic Junagadh - Best dental clinic in Junagadh featuring Dr. Kishan Dudhat's clinic &amp; Dr. Nikunj Bhuva's clinic. Painless dental implants, root canal, teeth whitening at Zanzarda Chowkdi." />
     <meta property="og:site_name" content="Xpertdental Clinic Junagadh" />
     <meta property="og:locale" content="en_IN" />
@@ -33,12 +33,26 @@
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Best Dental Clinic in Junagadh | Xpertdental Clinic Junagadh" />
+    <meta name="twitter:title" content="Xpertdental Clinic Junagadh" />
     <meta name="twitter:description" content="Best dental clinic in Junagadh - Xpertdental Clinic Junagadh. Dr. Kishan Dudhat's clinic &amp; Dr. Nikunj Bhuva's clinic at Zanzarda Chowkdi Bypass Road." />
     <meta name="twitter:image" content="/assets/clinicboardphoto.webp" />
 
     <meta name="theme-color" content="#d87943" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+
+    <!-- Single Page App routing restoration for GitHub Pages / static hosting -->
+    <script>
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&') 
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
 
     <!-- Schema.org JSON-LD Structured Data for Local Dental Hospital in Junagadh -->
     <script type="application/ld+json">
