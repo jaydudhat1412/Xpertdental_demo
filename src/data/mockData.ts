@@ -143,38 +143,56 @@ export const testimonials = [
 export const faqs = [
   {
     id: 1,
-    question: "Are your treatments affordable?",
-    answer: "The cost of our treatments varies depending on the complexity of the case. We offer flexible payment plans to make procedures more accessible. Please contact us for a detailed consultation.",
-    category: "Pricing"
+    question: "Why is Xpertdental considered the best dental clinic in Junagadh?",
+    answer: "Xpertdental Clinic Junagadh is widely rated as the best dental clinic in Junagadh because of our ultra-modern sterile operatory, cutting-edge digital diagnostics, painless dental implants, and the specialized leadership of Dr. Kishan Dudhat (Oral & Maxillofacial Surgeon) and Dr. Nikunj Bhuva (Periodontist & Implantologist).",
+    category: "General"
   },
   {
     id: 2,
-    question: "Will I experience pain after a root canal or extraction?",
-    answer: "It's normal to experience mild discomfort and swelling for a few days after these procedures. We will provide you with specific post-operative care instructions and prescribe pain relief medication to ensure a smooth and comfortable recovery.",
-    category: "Recovery"
+    question: "Where is Dr. Kishan Dudhat's clinic located in Junagadh?",
+    answer: "Dr. Kishan Dudhat's clinic is located at Xpertdental Clinic, Akshar Plaza, 1, Zanzarda Chowkdi Bypass Road, above Dr. Sangani Hospital, Junagadh, Gujarat 362001. Dr. Kishan specializes in painless wisdom tooth extraction, dental implants, jaw surgery, and facial aesthetics.",
+    category: "Doctors"
   },
   {
     id: 3,
-    question: "Do dental implants hurt?",
-    answer: "The procedure is done under local anesthesia, so you won't feel pain during the surgery. Mild discomfort during healing is normal and manageable with medication.",
-    category: "Surgery"
+    question: "Where is Dr. Nikunj Bhuva's clinic located in Junagadh?",
+    answer: "Dr. Nikunj Bhuva's clinic is located at Xpertdental Clinic, Akshar Plaza, 1, Zanzarda Chowkdi Bypass Road, Junagadh. Dr. Nikunj is a premier specialist in gum treatments (pyorrhea, flap surgery), cosmetic smile makeovers, and permanent dental implants.",
+    category: "Doctors"
   },
   {
     id: 4,
-    question: "How long is the recovery time for wisdom tooth removal?",
-    answer: "Initial recovery usually takes about 3 to 5 days, during which you should eat soft foods and avoid strenuous activity. Complete healing of the gum tissue takes a few weeks.",
-    category: "Recovery"
+    question: "How do I book an appointment at Xpertdental Clinic Junagadh?",
+    answer: "You can book an appointment at Xpertdental Clinic Junagadh easily by calling us at +91-9104827340, sending a WhatsApp message, or using the instant appointment booking form on our website.",
+    category: "Appointments"
   },
   {
     id: 5,
-    question: "Are there hidden charges in your treatments?",
-    answer: "No, we believe in complete transparency. After your initial consultation and diagnosis, we provide a detailed breakdown of the treatment plan and associated costs before proceeding with any procedure.",
-    category: "Pricing"
+    question: "What treatments are offered at Xpertdental Clinic Junagadh?",
+    answer: "Xpertdental Clinic Junagadh provides comprehensive multispecialty treatments including painless root canal therapy (single sitting), permanent dental implants, orthodontic braces & clear aligners, laser teeth whitening, wisdom tooth extraction, and pediatric dentistry.",
+    category: "Treatments"
   },
   {
     id: 6,
+    question: "Are your dental treatments affordable?",
+    answer: "Yes, Xpertdental Clinic Junagadh offers transparent, honest pricing with flexible EMI/payment options to make world-class dental care accessible to everyone.",
+    category: "Pricing"
+  },
+  {
+    id: 7,
+    question: "Do dental implants hurt?",
+    answer: "The implant procedure is performed under local anesthesia with advanced surgical techniques, making it virtually painless during surgery. Post-op discomfort is mild and easily managed with prescribed medication.",
+    category: "Surgery"
+  },
+  {
+    id: 8,
+    question: "Will I experience pain after a root canal or tooth extraction?",
+    answer: "Modern rotary endodontics and local anesthesia make the procedure painless. Mild sensitivity for 2-3 days afterwards is normal and quickly subsides with aftercare medication.",
+    category: "Recovery"
+  },
+  {
+    id: 9,
     question: "Is teeth whitening safe?",
-    answer: "Yes, when performed by professionals, teeth whitening is completely safe and does not damage your enamel.",
+    answer: "Yes, when performed by dental professionals using clinically tested whitening agents and laser activation, teeth whitening is completely safe and protects your tooth enamel.",
     category: "Cosmetic"
   }
 ];

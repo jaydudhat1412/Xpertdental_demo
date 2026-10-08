@@ -21,6 +21,12 @@ import { OptimizedImage } from "@/components/ui/OptimizedImage";
 
 const heroSlides = [
   {
+    image: "/assets/dental-clinic-bright.webp",
+    badge: "Modern Clinical Infrastructure",
+    title: "Advanced Multispecialty Operatory",
+    description: "Sunlit operatory suites equipped with ergonomic dental technology and sterile protocols"
+  },
+  {
     image: "/assets/clinicboardphoto.webp",
     badge: "Hospital Facility • Junagadh",
     title: "Xpert Dental Hospital",
@@ -31,12 +37,6 @@ const heroSlides = [
     badge: "Sterile Operatory Suites",
     title: "Advanced Surgical & Implant Facility",
     description: "Ultra-modern ergonomic operatory chairs with Class-B autoclaving sterilization"
-  },
-  {
-    image: "/assets/dental-clinic-bg.webp",
-    badge: "Modern Clinical Infrastructure",
-    title: "Multispecialty Diagnosis & Care",
-    description: "Low-radiation digital radiography, intraoral imaging, and comfortable ambiance"
   },
   {
     image: "/assets/dental-care.webp",
@@ -165,10 +165,10 @@ export default function Home() {
       
       {/* Enhanced Hero Section with Dental Clinic Background & Image Slider */}
       <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center bg-gray-50/80 dark:bg-[#121113] transition-colors duration-200 overflow-hidden">
-        {/* Subtle Modern Dental Clinic Architectural Background Layer */}
+        {/* Subtle Architectural Clinic Background Texture */}
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-[0.06] dark:opacity-[0.14] pointer-events-none transition-opacity duration-700"
-          style={{ backgroundImage: "url('/assets/dental-clinic-bg.webp')" }}
+          className="absolute inset-0 bg-cover bg-center opacity-[0.06] dark:opacity-[0.12] pointer-events-none transition-opacity duration-700"
+          style={{ backgroundImage: "url('/assets/dental-clinic-bright.webp')" }}
         />
         {/* Dental Ambient Lighting & Clean Subtle Radial Gradients */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(216,121,67,0.08),transparent_70%)] dark:bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(231,138,83,0.12),transparent_70%)] pointer-events-none" />
@@ -185,7 +185,7 @@ export default function Home() {
             >
               <div className="inline-flex items-center gap-2 py-1.5 px-3.5 rounded-sm bg-white dark:bg-[#222222] border border-gray-200 dark:border-[#333333] text-gray-800 dark:text-[#c1c1c1] text-xs sm:text-sm font-semibold mb-6 shadow-xs">
                 <Sparkles className="w-4 h-4 text-[#d87943] dark:text-[#e78a53]" />
-                <span>Multispecialty Dental Hospital • Junagadh</span>
+                <span>Best Dental Clinic in Junagadh • Xpertdental Clinic</span>
               </div>
               
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-[1.18] mb-5 tracking-tight">
@@ -193,7 +193,7 @@ export default function Home() {
               </h1>
               
               <p className="text-base sm:text-lg text-gray-600 dark:text-[#888888] mb-8 max-w-lg leading-relaxed font-normal">
-                State-of-the-art dental surgeries, implants, and cosmetic care focused on clinical excellence, long-term oral health, and complete patient comfort.
+                Welcome to Xpertdental Clinic Junagadh — trusted as the best dental clinic in Junagadh. Home to Dr. Kishan Dudhat's clinic and Dr. Nikunj Bhuva's clinic, delivering painless dental implants, single-sitting root canals, and cosmetic smile makeovers.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8">
@@ -264,10 +264,10 @@ export default function Home() {
                         onError={(e) => {
                           (e.target as HTMLImageElement).src = "/assets/dental-clinic-bg.webp";
                         }}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover brightness-[1.06] contrast-[1.02]"
                       />
-                      {/* Dark Gradient Overlay for Readability */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/20 pointer-events-none" />
+                      {/* Compact Bottom Gradient Overlay to keep upper room bright and clear */}
+                      <div className="absolute inset-x-0 bottom-0 h-36 sm:h-44 bg-gradient-to-t from-black/75 via-black/20 to-transparent pointer-events-none" />
 
                       {/* Slide Caption Badge & Info */}
                       <div className="absolute bottom-9 sm:bottom-12 md:bottom-14 left-3 sm:left-6 right-3 sm:right-6 z-20 pointer-events-none">
@@ -334,7 +334,7 @@ export default function Home() {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-20px" }}
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
             {[
@@ -794,10 +794,10 @@ export default function Home() {
              className="text-center max-w-3xl mx-auto mb-16"
           >
             <div className="inline-flex items-center gap-2 py-1 px-3 rounded-sm bg-white dark:bg-[#222222] border border-gray-200 dark:border-[#333333] text-[#d87943] dark:text-[#e78a53] text-xs font-semibold mb-3">
-              Clinical Team
+              Specialist Doctors
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">Meet Our Specialists</h2>
-            <p className="text-base sm:text-xl text-gray-600 dark:text-[#888888]">Highly qualified surgeons and periodontal specialists committed to patient health.</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">Dr. Kishan Dudhat's Clinic &amp; Dr. Nikunj Bhuva's Clinic</h2>
+            <p className="text-base sm:text-xl text-gray-600 dark:text-[#888888]">Leading super-specialists at Xpertdental Clinic Junagadh dedicated to painless, permanent dental treatments.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 justify-center max-w-4xl mx-auto">
@@ -810,7 +810,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="bg-white dark:bg-[#121212] rounded-sm overflow-hidden group hover:-translate-y-1 transition-all duration-300 border border-gray-200 dark:border-[#222222] shadow-xs hover:shadow-md"
               >
-                <div className="aspect-[4/3] overflow-hidden relative m-4 md:m-6 rounded-sm bg-gray-100 dark:bg-[#161517]">
+                <div className="aspect-[4/3] overflow-hidden m-4 md:m-6 rounded-sm bg-gray-100 dark:bg-[#161517]">
                   <OptimizedImage
                     src={doctor.photo_url}
                     alt={doctor.name}
@@ -821,6 +821,9 @@ export default function Home() {
                   />
                 </div>
                 <div className="px-6 md:px-8 pb-8">
+                  <div className="inline-flex items-center gap-1.5 py-1 px-2.5 rounded-sm bg-[#527575]/10 dark:bg-[#5f8787]/15 text-[#527575] dark:text-[#5f8787] text-xs font-semibold mb-3">
+                    {doctor.id === 1 ? "Dr. Kishan Dudhat's Clinic" : "Dr. Nikunj Bhuva's Clinic"}
+                  </div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">{doctor.name}</h3>
                   <p className="text-[#d87943] dark:text-[#e78a53] font-bold mb-4 text-base tracking-wide">{doctor.specialization}</p>
                   <p className="text-gray-600 dark:text-[#888888] mb-6 line-clamp-2 leading-relaxed text-sm sm:text-base font-normal">{doctor.bio}</p>

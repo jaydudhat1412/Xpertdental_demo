@@ -73,9 +73,9 @@ export default function Contact() {
             <Sparkles className="w-3.5 h-3.5" />
             <span>Consultation & Inquiries</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">Contact Hospital Desk</h1>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">Contact Xpertdental Junagadh</h1>
           <p className="text-base sm:text-lg text-gray-600 dark:text-[#888888] leading-relaxed font-normal">
-            Have questions about clinical treatments, dental surgeries, or appointments? Our front desk is ready to help you.
+            Have questions about clinical treatments, dental surgeries, or appointments at Xpertdental Hospital in Junagadh? Our front desk is ready to help you.
           </p>
         </motion.div>
 

@@ -63,9 +63,9 @@ export default function Doctors() {
               <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? "animate-spin" : ""}`} />
             </button>
           </div>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">Our Expert Doctors</h1>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">Specialist Doctors • Dr. Kishan Dudhat's Clinic &amp; Dr. Nikunj Bhuva's Clinic</h1>
           <p className="text-base sm:text-lg text-gray-600 dark:text-[#888888] leading-relaxed font-normal">
-            Meet our team of experienced, super-specialized oral surgeons and periodontal doctors.
+            Meet our specialist surgeons at Xpertdental Clinic Junagadh — recognized as the best dental clinic in Junagadh for oral surgery, dental implants, and advanced periodontics.
           </p>
         </motion.div>
 
@@ -94,7 +94,7 @@ export default function Doctors() {
               {doctors.map((doctor) => (
                 <motion.div variants={itemVariants} key={doctor.id}>
                   <div className="bg-white dark:bg-[#121212] rounded-sm overflow-hidden group hover:-translate-y-1 transition-all duration-300 border border-gray-200 dark:border-[#222222] shadow-xs hover:shadow-md">
-                    <div className="aspect-[4/5] overflow-hidden relative m-3 md:m-4 rounded-sm bg-gray-100 dark:bg-[#161517]">
+                    <div className="aspect-[4/5] overflow-hidden m-3 md:m-4 rounded-sm bg-gray-100 dark:bg-[#161517]">
                       <OptimizedImage
                         src={doctor.photo_url}
                         alt={doctor.name}
@@ -103,15 +103,15 @@ export default function Doctors() {
                         containerClassName="w-full h-full"
                         className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-
-                      <div className="absolute bottom-5 left-5 right-5 text-white">
-                        <h2 className="text-2xl sm:text-3xl font-bold mb-1">{doctor.name}</h2>
-                        <p className="text-[#e78a53] font-semibold tracking-wide text-base">{doctor.specialization}</p>
-                      </div>
                     </div>
                     
                     <div className="p-6 md:p-8 pt-2">
+                      <div className="inline-flex items-center gap-1.5 py-1 px-2.5 rounded-sm bg-[#527575]/10 dark:bg-[#5f8787]/15 text-[#527575] dark:text-[#5f8787] text-xs font-semibold mb-3">
+                        {doctor.id === 1 ? "Dr. Kishan Dudhat's Clinic" : "Dr. Nikunj Bhuva's Clinic"}
+                      </div>
+                      <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-1.5">{doctor.name}</h2>
+                      <p className="text-[#d87943] dark:text-[#e78a53] font-semibold tracking-wide text-base mb-4">{doctor.specialization}</p>
+
                       <div className="flex flex-wrap gap-2 mb-5">
                         <span className="bg-gray-100 dark:bg-[#222222] text-gray-700 dark:text-[#c1c1c1] px-3 py-1 text-xs font-semibold rounded-sm">
                           {doctor.qualifications}

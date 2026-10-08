@@ -96,13 +96,13 @@ export default function About() {
           >
             <div className="inline-flex items-center gap-2 py-1.5 px-4 rounded-sm bg-white dark:bg-[#222222] border border-gray-200 dark:border-[#333333] text-[#d87943] dark:text-[#e78a53] text-xs sm:text-sm font-semibold mb-6 shadow-xs">
               <Building2 className="w-4 h-4 text-[#d87943] dark:text-[#e78a53]" />
-              <span>Multispecialty Dental Hospital • Junagadh</span>
+              <span>Best Dental Clinic in Junagadh • Xpertdental Clinic</span>
             </div>
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
-              About <span className="text-[#d87943] dark:text-[#e78a53]">{clinicData.clinic_name}</span> Dental Hospital
+              About <span className="text-[#d87943] dark:text-[#e78a53]">{clinicData.clinic_name} Clinic</span> Junagadh
             </h1>
             <p className="text-base sm:text-xl text-gray-600 dark:text-[#888888] max-w-3xl mx-auto leading-relaxed font-normal">
-              A modern healthcare institution built to bring world-class dental surgery, advanced oral diagnostics, and painless treatment solutions to Junagadh and surrounding regions.
+              Regarded as the best dental clinic in Junagadh, Xpertdental Clinic brings together Dr. Kishan Dudhat's clinic and Dr. Nikunj Bhuva's clinic under one roof at Zanzarda Chowkdi Bypass Road. Delivering surgical mastery, permanent dental implants, and comfortable pain-free dentistry.
             </p>
           </motion.div>
         </div>

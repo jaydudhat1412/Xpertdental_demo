@@ -1,0 +1,6 @@
+# Robots.txt for Xpertdental Dental Hospital, Junagadh
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: /sitemap.xml

@@ -20,6 +20,8 @@ export const TextHoverEffect = ({
   const [hovered, setHovered] = useState(false);
   const [maskPosition, setMaskPosition] = useState({ cx: "50%", cy: "50%" });
 
+  const rafRef = useRef<number | null>(null);
+
   // Dynamically calculate viewBox width so words like "Xpertdental" fit comfortably without clipping
   const calculatedViewBox = viewBox || `0 0 ${Math.max(480, text.length * 48)} 110`;
   const dashLength = 1200;
@@ -42,6 +44,17 @@ export const TextHoverEffect = ({
     }
   }, [cursor, hovered, updatePosition]);
 
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (e.touches[0]) {
+      const clientX = e.touches[0].clientX;
+      const clientY = e.touches[0].clientY;
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(() => {
+        setCursor({ x: clientX, y: clientY });
+      });
+    }
+  };
+
   return (
     <svg
       ref={svgRef}
@@ -61,11 +74,7 @@ export const TextHoverEffect = ({
           setCursor({ x: e.touches[0].clientX, y: e.touches[0].clientY });
         }
       }}
-      onTouchMove={(e) => {
-        if (e.touches[0]) {
-          setCursor({ x: e.touches[0].clientX, y: e.touches[0].clientY });
-        }
-      }}
+      onTouchMove={handleTouchMove}
       onTouchEnd={() => setHovered(false)}
       className={cn("select-none uppercase cursor-pointer block max-w-full", className)}
     >

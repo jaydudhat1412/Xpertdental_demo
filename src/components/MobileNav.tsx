@@ -113,8 +113,8 @@ export default function MobileNav({ isOpen, onClose, navLinks, isActive }: Mobil
             initial={{ x: "100%" }}
             animate={{ x: "0%" }}
             exit={{ x: "100%" }}
-            transition={{ type: "spring", damping: 30, stiffness: 280 }}
-            className="fixed inset-0 w-full h-[100dvh] bg-white/98 dark:bg-[#121113]/98 backdrop-blur-2xl flex flex-col justify-between overflow-y-auto z-10 shadow-2xl"
+            transition={{ type: "spring", damping: 32, stiffness: 300, mass: 0.8 }}
+            className="fixed inset-0 w-full h-[100dvh] bg-white dark:bg-[#121113] flex flex-col justify-between overflow-y-auto z-10 shadow-2xl will-change-transform"
           >
             {/* Top Bar inside Full-Screen Menu */}
             <div className="shrink-0 flex items-center justify-between px-5 h-20 border-b border-gray-200/80 dark:border-[#222222]">

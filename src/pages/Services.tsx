@@ -47,9 +47,9 @@ export default function Services() {
               <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? "animate-spin" : ""}`} />
             </button>
           </div>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">Our Dental Treatments</h1>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">Dental Treatments at Xpertdental Junagadh</h1>
           <p className="text-base sm:text-lg text-gray-600 dark:text-[#888888] leading-relaxed font-normal">
-            From routine checkups and teeth whitening to complex surgical implants, we provide complete multi-specialty care.
+            From routine checkups and teeth whitening to complex surgical dental implants, we provide complete multi-specialty care in Junagadh.
           </p>
         </motion.div>
 

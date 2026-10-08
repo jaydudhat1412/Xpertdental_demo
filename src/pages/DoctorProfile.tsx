@@ -48,13 +48,13 @@ export default function DoctorProfile() {
             
             <div className="flex-grow">
               <div className="inline-flex items-center gap-2 py-1 px-3 rounded-sm bg-[#527575]/10 dark:bg-[#5f8787]/15 text-[#527575] dark:text-[#5f8787] text-xs font-semibold mb-3">
-                Dental Specialist
+                {doctor.id === 1 ? "Dr. Kishan Dudhat's Clinic" : "Dr. Nikunj Bhuva's Clinic"} • Xpertdental Clinic Junagadh
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight">
                 {doctor.name}
               </h1>
               <p className="text-xl sm:text-2xl text-[#d87943] dark:text-[#e78a53] font-semibold mb-6">
-                {doctor.specialization}
+                {doctor.specialization} • Best Dental Clinic in Junagadh
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 max-w-xl">
