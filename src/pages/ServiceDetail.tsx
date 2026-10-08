@@ -121,7 +121,7 @@ export default function ServiceDetail() {
 
               <div className="pt-2 space-y-3">
                 <a
-                  href={`tel:${clinicData.raw_phone}`}
+                  href={`tel:${clinicData.phone.replace(/[^0-9+]/g, '')}`}
                   className="w-full flex items-center justify-center space-x-2 py-3 px-4 rounded-lg bg-[#0f2942] hover:bg-[#163b65] text-white text-xs font-bold transition-all shadow-xs"
                 >
                   <Phone className="w-4 h-4 text-[#38bdf8]" />

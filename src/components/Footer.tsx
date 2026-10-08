@@ -49,7 +49,7 @@ export default function Footer() {
     {
       icon: <MessageCircle size={17} className="text-emerald-500 shrink-0 mt-0.5" />,
       text: "WhatsApp Consultations",
-      href: `https://wa.me/${clinicData.whatsapp.replace(/[^0-9]/g, "")}?text=Hello%20Xpert%20Dental,%20I%20would%20like%20to%20inquire%20about%20dental%20treatments.`,
+      href: `https://wa.me/${clinicData.phone.replace(/[^0-9]/g, "")}?text=Hello%20Xpert%20Dental,%20I%20would%20like%20to%20inquire%20about%20dental%20treatments.`,
       target: "_blank"
     },
     {
