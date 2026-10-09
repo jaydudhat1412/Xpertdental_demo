@@ -3,6 +3,9 @@ export const clinicData = {
   address: "Akshar Plaza, 1, Zanzarda chowkdi Bypass Road, above Dr.Sangani Hospital, Zanzarda, Junagadh",
   short_address: "Akshar Plaza, 1, Zanzarda chowkdi Bypass Road, Zanzarda, Junagadh",
   phone: "+91-9104827340",
+  raw_phone: "+919104827340",
+  whatsapp: "+919104827340",
+  short_description: "Premier multi-specialty dental clinic in Junagadh offering painless root canals, dental implants, orthodontic braces, and advanced smile design.",
   email: "xpertdental991@gmail.com",
   mapUrl: "https://maps.app.goo.gl/ZccyYBAUFxMaEWps8",
   hours: {

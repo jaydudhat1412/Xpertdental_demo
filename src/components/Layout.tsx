@@ -54,7 +54,7 @@ export default function Layout() {
   ];
 
   const isActive = (path: string) => {
-    if (path === "/" && location.pathname !== "/") return false;
+    if (path === "/") return location.pathname === "/";
     return location.pathname.startsWith(path);
   };
 
