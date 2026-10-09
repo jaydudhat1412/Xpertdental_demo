@@ -41,13 +41,13 @@ export default function ServiceDetail() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-white/15 text-[#38bdf8] text-xs font-bold uppercase tracking-wider mb-3">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>{service.category || "Specialized Treatment"}</span>
+              <span>{(service as any).category || "Specialized Treatment"}</span>
             </div>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-3 tracking-tight">
               {service.name}
             </h1>
             <p className="text-base sm:text-lg text-slate-200 max-w-2xl font-normal">
-              {service.short_desc || service.description}
+              {(service as any).short_desc || service.description}
             </p>
           </div>
         </div>
