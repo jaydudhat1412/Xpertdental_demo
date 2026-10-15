@@ -1,11 +1,11 @@
 export const clinicData = {
-  clinic_name: "Xpertdental Junagadh",
+  clinic_name: "Xpert Dental & Maxillofacial Hospital",
   address: "Akshar Plaza, 1, Zanzarda chowkdi Bypass Road, above Dr.Sangani Hospital, Zanzarda, Junagadh",
   short_address: "Akshar Plaza, 1, Zanzarda chowkdi Bypass Road, Zanzarda, Junagadh",
   phone: "+91-9104827340",
   raw_phone: "+919104827340",
   whatsapp: "+919104827340",
-  short_description: "Xpertdental Junagadh (Xpert Dental & Implant Center, also searched as Xperdental) — Premier multi-specialty dental hospital in Junagadh offering painless root canals, dental implants, orthodontic braces, and advanced smile design.",
+  short_description: "Xpert Dental & Maxillofacial Hospital in Junagadh, Gujarat — advanced dental and maxillofacial care with a high-tech facility. Rated 5.0 on Google.",
   email: "xpertdental991@gmail.com",
   mapUrl: "https://maps.app.goo.gl/ZccyYBAUFxMaEWps8",
   hours: {
