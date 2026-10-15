@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: /sitemap.xml
+Sitemap: https://xpertdental.vercel.app/sitemap.xml

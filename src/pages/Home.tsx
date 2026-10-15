@@ -185,15 +185,15 @@ export default function Home() {
             >
               <div className="inline-flex items-center gap-2 py-1.5 px-3.5 rounded-sm bg-white dark:bg-[#222222] border border-gray-200 dark:border-[#333333] text-gray-800 dark:text-[#c1c1c1] text-xs sm:text-sm font-semibold mb-6 shadow-xs">
                 <Sparkles className="w-4 h-4 text-[#d87943] dark:text-[#e78a53]" />
-                <span>Best Dental Clinic in Junagadh • Xpertdental Clinic</span>
+                <span>Xpert Dental &amp; Implant Center • Junagadh</span>
               </div>
               
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-[1.18] mb-5 tracking-tight">
-                Refining your <span className="italic text-[#527575] dark:text-[#5f8787] font-serif">natural smile</span> with precision
+                Xpertdental Junagadh: Refining your <span className="italic text-[#527575] dark:text-[#5f8787] font-serif">natural smile</span> with precision
               </h1>
               
               <p className="text-base sm:text-lg text-gray-600 dark:text-[#888888] mb-8 max-w-lg leading-relaxed font-normal">
-                Welcome to Xpertdental Clinic Junagadh — trusted as the best dental clinic in Junagadh. Home to Dr. Kishan Dudhat's clinic and Dr. Nikunj Bhuva's clinic, delivering painless dental implants, single-sitting root canals, and cosmetic smile makeovers.
+                Welcome to Xpertdental Clinic Junagadh (Xpert Dental &amp; Implant Center, also searched as Xperdental) — premier hospital for Dr. Kishan Dudhat and Dr. Nikunj Bhuva at Zanzarda Chowkdi Bypass Road. Painless dental implants, single-sitting root canals, and cosmetic smile makeovers.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8">
