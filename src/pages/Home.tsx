@@ -164,7 +164,7 @@ export default function Home() {
     <div className="flex flex-col overflow-hidden bg-white dark:bg-[#121113] text-gray-900 dark:text-[#c1c1c1] transition-colors duration-200">
       
       {/* Enhanced Hero Section with Dental Clinic Background & Image Slider */}
-      <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center bg-gray-50/80 dark:bg-[#121113] transition-colors duration-200 overflow-hidden">
+      <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center bg-gray-50/80 dark:bg-[#121113] transition-colors duration-200 overflow-hidden transform-gpu">
         {/* Subtle Architectural Clinic Background Texture */}
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-[0.06] dark:opacity-[0.12] pointer-events-none transition-opacity duration-700"
@@ -261,6 +261,7 @@ export default function Home() {
                         src={slide.image}
                         alt={slide.title}
                         loading={idx === 0 ? "eager" : "lazy"}
+                        fetchPriority={idx === 0 ? "high" : "auto"}
                         decoding="async"
                         onError={(e) => {
                           (e.target as HTMLImageElement).src = "/assets/dental-clinic-bg.webp";
@@ -477,7 +478,7 @@ export default function Home() {
       </section>
 
       {/* Oral Health Tips / Blog Section */}
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-[#121113] transition-colors duration-200 relative border-t border-gray-100 dark:border-[#222222]">
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-[#121113] transition-colors duration-200 relative border-t border-gray-100 dark:border-[#222222] content-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <motion.div 
@@ -674,7 +675,7 @@ export default function Home() {
       </AnimatePresence>
 
       {/* Styled Testimonials Slider with Dental Operatory Backdrop */}
-      <section className="py-16 md:py-24 bg-[#121212] text-white relative overflow-hidden border-t border-[#222222]">
+      <section className="py-16 md:py-24 bg-[#121212] text-white relative overflow-hidden border-t border-[#222222] content-auto">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-10 pointer-events-none"
           style={{ backgroundImage: "url('/assets/dental-operatory-bg.webp')" }}
@@ -786,7 +787,7 @@ export default function Home() {
       </section>
 
       {/* Styled Doctors Section */}
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-[#121113] transition-colors duration-200 overflow-hidden relative border-t border-gray-100 dark:border-[#222222]">
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-[#121113] transition-colors duration-200 overflow-hidden relative border-t border-gray-100 dark:border-[#222222] content-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
              initial={{ opacity: 0, y: 30 }}
@@ -842,7 +843,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 md:py-24 bg-white dark:bg-[#121212] transition-colors duration-200 border-t border-gray-100 dark:border-[#222222]">
+      <section className="py-16 md:py-24 bg-white dark:bg-[#121212] transition-colors duration-200 border-t border-gray-100 dark:border-[#222222] content-auto">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
              initial={{ opacity: 0, y: 30 }}
